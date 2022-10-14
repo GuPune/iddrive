@@ -19,15 +19,33 @@
               </div>
               <h4>Hello! let's get started</h4>
               <h6 class="font-weight-light">Sign in to continue.</h6>
-              <form class="pt-3">
+              <form class="pt-3" method="POST" action="{{ url("login") }}">
+                @csrf
                 <div class="form-group">
-                  <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Username">
+                  <input id="email" type="email" class="form-control form-control-lg"  placeholder="Email"  name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+
+
+                  @error('email')
+                  <span class="invalid-feedback" role="alert">
+                      <strong>{{ $message }}</strong>
+                  </span>
+              @enderror
                 </div>
                 <div class="form-group">
-                  <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password">
+
+                  <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+
+                  @error('password')
+                      <span class="invalid-feedback" role="alert">
+                          <strong>{{ $message }}</strong>
+                      </span>
+                  @enderror
                 </div>
                 <div class="mt-3">
-                  <a class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" href="../../index.html">SIGN IN</a>
+
+                  <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">
+                    {{ __('Login') }}
+                </button>
                 </div>
                 <div class="my-2 d-flex justify-content-between align-items-center">
                   <div class="form-check">
@@ -38,11 +56,7 @@
                   </div>
                   <a href="#" class="auth-link text-black">Forgot password?</a>
                 </div>
-                <div class="mb-2">
-                  <button type="button" class="btn btn-block btn-facebook auth-form-btn">
-                    <i class="typcn typcn-social-facebook-circular mr-2"></i>Connect using facebook
-                  </button>
-                </div>
+
                 <div class="text-center mt-4 font-weight-light">
                   Don't have an account? <a href="register.html" class="text-primary">Create</a>
                 </div>
@@ -57,7 +71,7 @@
   </div>
   <!-- container-scroller -->
   <!-- base:js -->
-  @include('templateadmin.script')
+
   <!-- endinject -->
 </body>
 

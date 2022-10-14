@@ -9,7 +9,8 @@
 
     @include('templateadmin.styles')
     <!-- endinject -->
-    <link rel="shortcut icon" href="images/favicon.png" />
+
+    <link rel="shortcut icon" href="{{ asset('cms/images/favicon.png') }}" />
   </head>
   <body>
     {{-- <div class="row" id="proBanner">

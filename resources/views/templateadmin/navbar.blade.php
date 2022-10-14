@@ -1,6 +1,6 @@
 <header class="header">
     <a href="#" class="logo">
-        <img src="/img/1.png" alt="logo" width="80" height="40">
+        <img src="{{ asset('cms/img/1.png') }}" alt="logo" width="80" height="40">
     </a>
     <nav class="navbar navbar-static-top" role="navigation">
         <!-- Sidebar toggle button-->
@@ -14,7 +14,7 @@
 
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <img src="img/authors/avatar3.jpg" width="35" class="img-circle img-responsive pull-left" height="35" alt="riot">
+                        <img src="{{ asset('cms/img/authors/avatar3.jpg') }}" width="35" class="img-circle img-responsive pull-left" height="35" alt="riot">
                         <div class="riot">
                             <div>
                                 Admin
@@ -27,7 +27,7 @@
                     <ul class="dropdown-menu">
                         <!-- User image -->
                         <li class="user-header bg-light-blue">
-                            <img src="img/authors/avatar3.jpg" width="90" class="img-circle img-responsive" height="90" alt="User Image" />
+                            <img src="{{ asset('cms/img/authors/avatar3.jpg') }}" width="90" class="img-circle img-responsive" height="90" alt="User Image" />
                             <p class="topprofiletext">Admin</p>
                         </li>
                         <!-- Menu Body -->

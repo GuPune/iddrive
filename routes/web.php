@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,17 +21,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/admin/login', [LoginController::class, 'showAdminLoginForm']);
+Route::post('/login', [LoginController::class,'login'])->name('login');
 
-Route::group(['prefix' => 'cms'],function(){
-    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// Route::prefix('admin')->namespace('Admin')->middleware(['auth'])->group(function () {
+//     //
+//     Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
+//     Route::get('/logout', [App\Http\Controllers\HomeController::class, 'perform'])->name('logout.perform');
+// });
+
+
+Route::prefix('admin')->group(function () {
+    Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
+    Route::get('/logout', [HomeController::class, 'perform'])->name('logout.perform');
+
+
 });
-
-
-Route::prefix("cms")->group(function(){
-  //  Route::get('/home', [HomeController::class, 'index'])->name('home');
-    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
- });
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
