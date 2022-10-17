@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\CkeditorController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\AuthController;
 
@@ -36,5 +37,11 @@ Route::prefix('admin')->group(function () {
     Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
     Route::get('/logout', [HomeController::class, 'perform'])->name('logout.perform');
 
+    Route::resource('new', '\App\Http\Controllers\NewController');
+    Route::resource('product', '\App\Http\Controllers\ProductController');
+    Route::resource('bussines', '\App\Http\Controllers\BussinesController');
 
 });
+
+
+Route::post('uploadx', [App\Http\Controllers\CKEditorController::class, 'upload'])->name('uploadx');

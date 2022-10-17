@@ -59,9 +59,7 @@
         <!-- partial -->
         <div class="main-panel">
           <div class="content-wrapper">
-            <div class="content-wrapper">
-                @yield('content')
-            </div>
+            @yield('content')
 
 
 
