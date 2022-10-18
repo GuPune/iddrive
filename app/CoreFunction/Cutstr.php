@@ -23,7 +23,7 @@ class Cutstr extends Model
     //This will return the HTML source of the page as a string.
     // $htmlString = file_get_contents('https://en.wikipedia.org/wiki/Main_Page');
 
-    $url = "http://abc/dgdc.php?p1=djkl&p2=";
+    $url = "https://iddrives.co.th/web/dashboard/?action=Web_NewsTable&n_type=1";
 
 //$result = file_get_contents($url);
     $htmlString = file_get_contents($url);
