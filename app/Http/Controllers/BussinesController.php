@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\NewContent;
 
 class BussinesController extends Controller
 {
@@ -15,7 +16,11 @@ class BussinesController extends Controller
     {
         //
        // return view('home');
-        return view('pages.bussines.index');
+
+       $data = NewContent::where('status','Y')->get();
+
+       dd($data);
+        return view('pages.bussines.index')->with('data'.$data);
     }
 
     /**

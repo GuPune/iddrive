@@ -14,8 +14,8 @@
               <label for="exampleInputUsername1">ระบุชื่อเว็บไซต์ *</label>
               <input type="text" class="form-control" id="exampleInputUsername1" placeholder="Username">
             </div>
-            <button type="button" class="btn btn-info btn-lg btn-block">Block buttons
-                <i class="typcn typcn-th-menu float-right"></i>
+            <button type="button" class="btn btn-info btn-lg btn-block">บันทึก
+
               </button>
 
         </div>
@@ -31,8 +31,8 @@
               <label for="exampleInputUsername1">Keywords ใส่เครื่องหมาย (,) เพื่อคั่นประโยค*</label>
               <input type="text" class="form-control" id="exampleInputUsername1" placeholder="Username">
             </div>
-            <button type="button" class="btn btn-info btn-lg btn-block">Block buttons
-                <i class="typcn typcn-th-menu float-right"></i>
+            <button type="button" class="btn btn-info btn-lg btn-block">บันทึก
+
               </button>
         </div>
       </div>
@@ -49,8 +49,8 @@
               <label for="exampleInputUsername1">เกี่ยวกับเรา</label>
               <input type="text" class="form-control" id="exampleInputUsername1" placeholder="Username">
             </div>
-            <button type="button" class="btn btn-info btn-lg btn-block">Block buttons
-                <i class="typcn typcn-th-menu float-right"></i>
+            <button type="button" class="btn btn-info btn-lg btn-block">บันทึก
+
               </button>
         </div>
       </div>

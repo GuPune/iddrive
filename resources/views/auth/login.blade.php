@@ -17,7 +17,7 @@
               <div class="brand-logo">
                 <img src="../../images/logo.svg" alt="logo">
               </div>
-              <h4>Hello! let's get started</h4>
+              {{-- <h4>Hello! let's get started</h4> --}}
               <h6 class="font-weight-light">Sign in to continue.</h6>
               <form class="pt-3" method="POST" action="{{ url("login") }}">
                 @csrf
@@ -33,7 +33,7 @@
                 </div>
                 <div class="form-group">
 
-                  <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                  <input id="password" type="password" class="form-control  @error('password') is-invalid @enderror"  placeholder="Password" name="password" required autocomplete="current-password">
 
                   @error('password')
                       <span class="invalid-feedback" role="alert">
@@ -47,7 +47,7 @@
                     {{ __('Login') }}
                 </button>
                 </div>
-                <div class="my-2 d-flex justify-content-between align-items-center">
+                {{-- <div class="my-2 d-flex justify-content-between align-items-center">
                   <div class="form-check">
                     <label class="form-check-label text-muted">
                       <input type="checkbox" class="form-check-input">
@@ -55,11 +55,7 @@
                     </label>
                   </div>
                   <a href="#" class="auth-link text-black">Forgot password?</a>
-                </div>
-
-                <div class="text-center mt-4 font-weight-light">
-                  Don't have an account? <a href="register.html" class="text-primary">Create</a>
-                </div>
+                </div> --}}
               </form>
             </div>
           </div>

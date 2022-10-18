@@ -7,11 +7,22 @@
     <title>CelestialUI Admin</title>
     <!-- base:css -->
 
-    @include('templateadmin.styles')
+    {{-- @include('templateadmin.styles') --}}
     <!-- endinject -->
+    <link href="{{ asset('cms/vendors/typicons.font/font/typicons.css') }}" rel="stylesheet">
+    <link href="{{ asset('cms/vendors/css/vendor.bundle.base.css') }}" rel="stylesheet">
+    <link href="{{ asset('cms/css/vertical-layout-light/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('cms/vendors/mdi/css/materialdesignicons.min.css') }}" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+
+
+
 
     <link rel="shortcut icon" href="{{ asset('cms/images/favicon.png') }}" />
   </head>
+
+
   <body>
     {{-- <div class="row" id="proBanner">
       <div class="col-12">
@@ -76,7 +87,22 @@
     </div>
 
 
+    <script src="{{ asset('cms/vendors/js/vendor.bundle.base.js') }}"></script>
 
-    @include('templateadmin.script')
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+
+
+    {{-- @include('templateadmin.script') --}}
+    <script>
+
+        $(document).ready( function () {
+          $('#myTable').DataTable();
+      } );
+
+        </script>
   </body>
+
+
+
+
 </html>

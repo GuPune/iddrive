@@ -15,11 +15,12 @@ class CreateNewTable extends Migration
     {
         Schema::create('new', function (Blueprint $table) {
             $table->id();
-            $table->text('name')->nullable();
+            $table->text('title')->nullable();
             $table->text('des')->nullable();
             $table->text('url')->nullable();
             $table->text('keywords')->nullable();
             $table->string('status')->nullable();
+            $table->integer('view')->nullable();
             $table->timestamps();
         });
     }

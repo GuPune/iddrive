@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\NewContent;
 use Illuminate\Http\Request;
+use App\CoreFunction;
 
 class NewController extends Controller
 {
@@ -15,7 +17,11 @@ class NewController extends Controller
     {
         //
 
-        return view('pages.new.index');
+        $data = NewContent::where('id',4)->first();
+       $userconnect = CoreFunction\Cutstr::findimgInhtml($data->des);
+ dd($userconnect);
+
+        return view('pages.new.index')->with('data',$data);
     }
 
     /**
@@ -38,6 +44,20 @@ class NewController extends Controller
     public function store(Request $request)
     {
         //
+        \Log::info($request->all());
+        $n_text = htmlentities(addslashes($request->detail));
+      //  \Log::info($n_text);
+
+      $save = NewContent::create([
+        'title' => $request->title,
+        'des' => $n_text,
+        'url' => $request->url,
+        'keyword' => $request->keyword,
+        'view' => 0,
+        'status' => 'Y'
+    ]);
+
+        return 1;
     }
 
     /**

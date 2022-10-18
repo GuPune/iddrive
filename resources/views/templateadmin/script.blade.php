@@ -1,6 +1,9 @@
 
 
 <script src="{!! asset('cms/vendors/js/vendor.bundle.base.js') !!}"></script>
+
+
+
 <script src="{!! asset('cms/js/off-canvas.js') !!}"></script>
 <script src="{!! asset('cms/js/hoverable-collapse.js') !!}"></script>
 <script src="{!! asset('cms/js/template.js') !!}"></script>
