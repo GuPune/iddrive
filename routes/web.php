@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CkeditorController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\ExportHtmlNewController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,3 +46,5 @@ Route::prefix('admin')->group(function () {
 
 
 Route::post('uploadx', [App\Http\Controllers\CKEditorController::class, 'upload'])->name('uploadx');
+
+Route::get('/export/new/{id}', [ExportHtmlNewController::class, 'index'])->name('dashboard');

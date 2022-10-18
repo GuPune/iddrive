@@ -37,7 +37,13 @@
                   <tr>
                     <td>{{ ++$k }}</td>
                     <td>
-                      Herman Beck
+
+                        @php
+    $datas = \App\CoreFunction\Cutstr::findimgInhtml('https://iddrives.co.th/web/export/findImgnews/?n_code=BLHYNNQTAHGCC1Q79WU');
+
+
+@endphp
+<img src="<?= $datas ?>" style="height:100px; width:150px; " />
                     </td>
                     <td>
                         {{ $items->title }}

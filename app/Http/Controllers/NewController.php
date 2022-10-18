@@ -17,10 +17,8 @@ class NewController extends Controller
     {
         //
 
-        $data = NewContent::where('id',6)->first();
 
-       $userconnect = CoreFunction\Cutstr::findimgInhtml($data->des);
-
+       $data = NewContent::all();
 
         return view('pages.new.index')->with('data',$data);
     }
@@ -46,7 +44,8 @@ class NewController extends Controller
     {
         //
 
-       $n_text = htmlentities(addslashes($request->detail));
+       $n_text = htmlentities($request->detail);
+
        $n_code = CoreFunction\Cutstr::random_password(20);
 
 
