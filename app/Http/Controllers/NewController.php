@@ -17,9 +17,10 @@ class NewController extends Controller
     {
         //
 
-        $data = NewContent::where('id',4)->first();
+        $data = NewContent::where('id',6)->first();
+
        $userconnect = CoreFunction\Cutstr::findimgInhtml($data->des);
- dd($userconnect);
+
 
         return view('pages.new.index')->with('data',$data);
     }
@@ -44,15 +45,17 @@ class NewController extends Controller
     public function store(Request $request)
     {
         //
-        \Log::info($request->all());
-        $n_text = htmlentities(addslashes($request->detail));
-      //  \Log::info($n_text);
+
+       $n_text = htmlentities(addslashes($request->detail));
+       $n_code = CoreFunction\Cutstr::random_password(20);
+
 
       $save = NewContent::create([
         'title' => $request->title,
         'des' => $n_text,
         'url' => $request->url,
         'keyword' => $request->keyword,
+        'n_code' => $n_code,
         'view' => 0,
         'status' => 'Y'
     ]);

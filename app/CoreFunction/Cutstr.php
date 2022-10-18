@@ -23,10 +23,7 @@ class Cutstr extends Model
     //This will return the HTML source of the page as a string.
     // $htmlString = file_get_contents('https://en.wikipedia.org/wiki/Main_Page');
 
-    $url = "&lt;p&gt;&lt;img alt=\&quot;\&quot; src=\&quot;https://www.img.in.th/images/fd1b57266555266dc84dbab0053ddd81.jpg\&quot; style=\&quot;height:960px; width:1280px\&quot; /&gt;&lt;/p&gt;";
-
-//$result = file_get_contents($url);
-    $htmlString = file_get_contents($url);
+    $htmlString = file_get_contents($urlPage);
     //Create a new DOMDocument object.
     $htmlDom = new DOMDocument();
 
@@ -82,11 +79,16 @@ class Cutstr extends Model
 
 
 
-
-
-
-
-
+    public static function random_password($max_length = 20)
+    {
+        $text = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        $text_length = mb_strlen($text, 'UTF-8');
+        $pass = '';
+        for ($i = 0; $i < $max_length; $i++) {
+            $pass .= @$text[rand(0, $text_length)];
+        }
+        return $pass;
+    }
 
 
 
