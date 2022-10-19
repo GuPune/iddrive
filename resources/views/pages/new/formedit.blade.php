@@ -18,7 +18,7 @@
             <div class="form-group">
               <label for="exampleInputUsername1">หัวข้อ / ชื่อเรื่อง  </label><label  style="color:red;"> * </label>
               <input type="text" class="form-control" id="id" value="{{$data->id}}">
-              <input type="text" class="form-control" id="title" placeholder="Title"  value="">
+              <input type="text" class="form-control" id="title" placeholder="Title"  value="{{$data->title}}">
               <div class="help-block-name help-block">กรุณากรอกชื่อเรื่อง</div>
             </div>
 
