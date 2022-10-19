@@ -32,7 +32,7 @@
               </div>
               <div class="form-group">
                 <label for="exampleInputUsername1">Keywords ใส่เครื่องหมาย (,) เพื่อคั่นประโยค  </label>
-                <input type="text" class="form-control" id="keyword" placeholder="Keyword" value="{{$data->keyword}}">
+                <input type="text" class="form-control" id="keyword" placeholder="Keyword" value="{{$data->keywords}}">
               </div>
               <div class="form-group">
                 <label for="exampleInputUsername1">สถานะ </label>

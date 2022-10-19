@@ -53,7 +53,7 @@ class NewController extends Controller
         'title' => $request->title,
         'des' => $n_text,
         'url' => $request->url,
-        'keyword' => $request->keyword,
+        'keywords' => $request->keyword,
         'n_code' => $n_code,
         'view' => 0,
         'type' => 1,
