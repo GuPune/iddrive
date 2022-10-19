@@ -23,7 +23,7 @@
             </div>
 
             <div class="form-group">
-                <textarea name="details"  id="details">{{$data->des}} </textarea>
+                <textarea name="details"  id="details"> {!! $data->des !!}</textarea>
                 <div class="help-block-des help-block">กรุณากรอกรายละเอียด</div>
               </div>
               <div class="form-group">
