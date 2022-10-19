@@ -19,6 +19,7 @@ class NewContent extends Model
         'keywords',
         'status',
         'n_code',
+        'type',
         'view'
     ];
 }

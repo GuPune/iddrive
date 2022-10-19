@@ -14,10 +14,11 @@
     <div class="col-md-12 grid-margin stretch-card">
       <div class="card">
         <div class="card-body">
-          <h4 class="card-title">แบบฟอร์ม ข่าวสารและกิจกรรม</h4>
+          <h4 class="card-title">แก้ไขแบบฟอร์ม ข่าวสารและกิจกรรม</h4>
             <div class="form-group">
               <label for="exampleInputUsername1">หัวข้อ / ชื่อเรื่อง  </label><label  style="color:red;"> * </label>
-              <input type="text" class="form-control" id="title" placeholder="Title">
+              <input type="text" class="form-control" id="id" value="{{$data->id}}">
+              <input type="text" class="form-control" id="title" placeholder="Title"  value="">
               <div class="help-block-name help-block">กรุณากรอกชื่อเรื่อง</div>
             </div>
 

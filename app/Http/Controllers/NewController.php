@@ -18,7 +18,7 @@ class NewController extends Controller
         //
 
 
-       $data = NewContent::all();
+       $data = NewContent::whereIn('status', ['Y', 'N'])->where('type','1')->get();
 
         return view('pages.new.index')->with('data',$data);
     }
@@ -56,6 +56,7 @@ class NewController extends Controller
         'keyword' => $request->keyword,
         'n_code' => $n_code,
         'view' => 0,
+        'type' => 1,
         'status' => 'Y'
     ]);
 
@@ -71,6 +72,7 @@ class NewController extends Controller
     public function show($id)
     {
         //
+
     }
 
     /**
@@ -82,6 +84,8 @@ class NewController extends Controller
     public function edit($id)
     {
         //
+        $data = NewContent::where('id',$id)->first();
+        return view('pages.new.formedit')->with('data',$data);
     }
 
     /**
@@ -105,5 +109,14 @@ class NewController extends Controller
     public function destroy($id)
     {
         //
+
+        $dele = NewContent::where('id',$id)->update(['status' => 'D']);
+
+
+        return response()->json([
+            'msg_return' => 'บันทึกสำเร็จ',
+            'code_return' => 1,
+        ]);
+
     }
 }

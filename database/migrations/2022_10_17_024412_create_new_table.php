@@ -20,6 +20,7 @@ class CreateNewTable extends Migration
             $table->text('url')->nullable();
             $table->text('keywords')->nullable();
             $table->string('status')->nullable();
+            $table->string('type')->nullable();
             $table->integer('view')->nullable();
             $table->timestamps();
         });

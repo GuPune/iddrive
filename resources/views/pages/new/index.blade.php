@@ -60,9 +60,9 @@
 
                     </td>
                     <td>
+                        <a href="{{ url('/admin/new/' . $items->id . '/edit') }}" class="btnx editmdi btn-edit"><i class="mdi mdi-brush"></i></a>
 
-                        <button type="button" class="btnx editmdi"><i class="mdi mdi-brush"></i></button>
-                        <button type="button" class="btnx delmdi"><i class="mdi mdi-backspace"></i></button>
+                        <button type="button" class="btnx delmdi btn-delete" id="dele" onclick="del({{$items->id}});"><i class="mdi mdi-backspace"></i></button>
                     </td>
                   </tr>
               @endforeach
@@ -97,11 +97,73 @@
     color: rgb(255, 187, 0);
 }
 </style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
   <script>
 
     $(document).ready( function () {
       $('#myTable').DataTable();
   } );
+
+
+  function del(id)
+{
+   // alert(id);
+
+    deleteConf(id);
+}
+
+function edi(id)
+{
+    alert(id);
+
+
+}
+
+
+
+function deleteConf(id) {
+            swal({
+                title: "คุณต้องการลบจริงหรือไม่?",
+                text: "ข้อมูลไม่สามารถกู้คืนได้!",
+                icon: "warning",
+                buttons: [
+                    'ยกเลิกลบรายการ',
+                    'ลบรายการ'
+                ],
+                dangerMode: true,
+            }).then(function(isConfirm) {
+                if (isConfirm) {
+                    swal({
+                        title: 'ลบรายการ!',
+                        text: 'ลบรายการเรียบร้อย',
+                        icon: 'success'
+                    }).then(function() {
+                        $.ajaxSetup({
+                            headers: {
+                                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                            }
+                        });
+
+                        $.ajax({
+                            dataType: 'json',
+                            type:'DELETE',
+                            data:{
+                                '_token': "{{ csrf_token() }}",
+                                id:id},
+                            url: '/admin/new/' + id,
+                            success: function(datas){
+
+                                location.reload();
+                            }
+
+                        })
+                    });
+                } else {
+                    swal("ยกเลิก", "ยกเลิกรายการ", "error");
+                }
+            });
+        } // error form show text
+
 
     </script>
 
