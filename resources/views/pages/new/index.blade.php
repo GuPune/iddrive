@@ -40,7 +40,7 @@
 
                         @php
                         $link = env('APP_URL');
-      $fineUrlImg = $link . "export/new/" . $items->n_code;
+      $fineUrlImg = $link . "/export/new/" . $items->n_code;
 dd($fineUrlImg);
     $datas = \App\CoreFunction\Cutstr::findimgInhtml($fineUrlImg) != NULL  ? \App\CoreFunction\Cutstr::findimgInhtml($fineUrlImg) : $link . "src/images/web/no-image-icon-11.png";
 
