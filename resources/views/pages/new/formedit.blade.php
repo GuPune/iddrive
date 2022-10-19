@@ -17,13 +17,13 @@
           <h4 class="card-title">แก้ไขแบบฟอร์ม ข่าวสารและกิจกรรม</h4>
             <div class="form-group">
               <label for="exampleInputUsername1">หัวข้อ / ชื่อเรื่อง  </label><label  style="color:red;"> * </label>
-              <input type="text" class="form-control" id="id" value="{{$data->id}}">
+              <input type="hidden" class="form-control" id="id" value="{{$data->id}}">
               <input type="text" class="form-control" id="title" placeholder="Title"  value="{{$data->title}}">
               <div class="help-block-name help-block">กรุณากรอกชื่อเรื่อง</div>
             </div>
 
             <div class="form-group">
-                <textarea name="details"  id="details"></textarea>
+                <textarea name="details"  id="details">{{$data->details}}</textarea>
                 <div class="help-block-des help-block">กรุณากรอกรายละเอียด</div>
               </div>
               <div class="form-group">
