@@ -85,6 +85,7 @@
         var url = $('#url').val();
         var keyword = $('#keyword').val();
         var status = $('#status').val();
+        var id = $('#id').val();
 
 
 
@@ -98,22 +99,15 @@
 
                 $.ajax({
                     dataType: 'json',
-                    type:'POST',
+                    type:'PUT',
 
                     data:{
                         '_token': "{{ csrf_token() }}",
                         title:title,detail:detail,url:url,keyword:keyword,status:status},
-                    url: '/admin/new',
+                    url: '/admin/new/'+ + id,
                     success: function(datas){
 
-                      swal("บันทึกสำเร็จ!", "บันทึกสำเร็จ!", "success");
 
-
-                      var title = $('#title').val('');
-                      var url = $('#url').val('');
-                      var keyword = $('#keyword').val('');
-                      var status = $('#status').val('');
-                      var detail = CKEDITOR.instances.details.setData('');
 
 
                     }
