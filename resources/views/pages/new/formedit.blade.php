@@ -108,7 +108,7 @@
                     success: function(datas){
 
 
-
+                        swal("แก้สำเร็จ!", "แก้สำเร็จ!", "success");
 
                     }
                 })

@@ -98,7 +98,7 @@ class NewController extends Controller
     public function update(Request $request, $id)
     {
         //
-\Log::info($request->all());
+
         return response()->json([
             'msg_return' => 'บันทึกสำเร็จ',
             'code_return' => 1,
