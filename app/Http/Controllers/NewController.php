@@ -98,7 +98,14 @@ class NewController extends Controller
     public function update(Request $request, $id)
     {
         //
-
+        $n_text = htmlentities($request->detail);
+        $updatecontent = NewContent::where('id',$id)->update([
+        'title' => $request->title,
+        'des' => $n_text,
+        'url' => $request->url,
+        'keywords' => $request->keyword,
+        'status' => $request->status
+        ]);
         return response()->json([
             'msg_return' => 'บันทึกสำเร็จ',
             'code_return' => 1,
