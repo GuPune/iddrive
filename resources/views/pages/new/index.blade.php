@@ -41,9 +41,10 @@
                         @php
                         $link = env('APP_URL');
       $fineUrlImg = $link . "export/new/" . $items->n_code;
-      dd($fineUrlImg);
-    $datas = \App\CoreFunction\Cutstr::findimgInhtml('https://iddrives.co.th/web/export/findImgnews/?n_code=BLHYNNQTAHGCC1Q79WU');
 
+    $datas = \App\CoreFunction\Cutstr::findimgInhtml($fineUrlImg) != NULL  ? \App\CoreFunction\Cutstr::findimgInhtml($fineUrlImg) : $link . "src/images/web/no-image-icon-11.png";
+
+   // $fineimgInhtml = findimgInhtml($fineUrlImg) != NULL  ? findimgInhtml($fineUrlImg) : $link . "src/images/web/no-image-icon-11.png";
 
 @endphp
 <img src="<?= $datas ?>" style="height:100px; width:150px; " />
