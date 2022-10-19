@@ -39,8 +39,8 @@
                     <td>
 
                         @php
-
-      $fineUrlImg = env('APP_URL') . "export/new/" . $items->n_code;
+                        $link = env('APP_URL');
+      $fineUrlImg = $link . "export/new/" . $items->n_code;
       dd($fineUrlImg);
     $datas = \App\CoreFunction\Cutstr::findimgInhtml('https://iddrives.co.th/web/export/findImgnews/?n_code=BLHYNNQTAHGCC1Q79WU');
 
