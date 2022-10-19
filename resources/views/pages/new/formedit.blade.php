@@ -28,17 +28,17 @@
               </div>
               <div class="form-group">
                 <label for="exampleInputUsername1">URL  </label>
-                <input type="text" class="form-control" id="url" placeholder="Url">
+                <input type="text" class="form-control" id="url" placeholder="Url"  value="{{$data->url}}">
               </div>
               <div class="form-group">
                 <label for="exampleInputUsername1">Keywords ใส่เครื่องหมาย (,) เพื่อคั่นประโยค  </label>
-                <input type="text" class="form-control" id="keyword" placeholder="Keyword">
+                <input type="text" class="form-control" id="keyword" placeholder="Keyword" value="{{$data->keyword}}">
               </div>
               <div class="form-group">
                 <label for="exampleInputUsername1">สถานะ </label>
                 <select class="form-control" id="status">
-                    <option value="Y">Active</option>
-                    <option value="N">Isactive</option>
+                    <option value="Y" @if($data->status == 'Y'){{'selected'}}@endif>Active</option>
+                    <option value="N" @if($data->status == 'N'){{'selected'}}@endif>Isactive</option>
                   </select>
               </div>
 
