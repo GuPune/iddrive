@@ -42,7 +42,7 @@
                         $link = env('APP_URL');
       $fineUrlImg = $link . "/export/new/" . $items->n_code;
 
-    $datas = \App\CoreFunction\Cutstr::findimgInhtml($fineUrlImg) != NULL  ? \App\CoreFunction\Cutstr::findimgInhtml($fineUrlImg) : $link . "src/images/web/no-image-icon-11.png";
+    $datas = \App\CoreFunction\Cutstr::findimgInhtml($fineUrlImg) != NULL  ? \App\CoreFunction\Cutstr::findimgInhtml($fineUrlImg) : $link . "src/img/no_photo.jpg";
 
    // $fineimgInhtml = findimgInhtml($fineUrlImg) != NULL  ? findimgInhtml($fineUrlImg) : $link . "src/images/web/no-image-icon-11.png";
 
