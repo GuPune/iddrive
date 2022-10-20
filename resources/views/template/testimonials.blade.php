@@ -28,7 +28,7 @@
               <p class="card-text">{{$datas->title}}</p>
             </div>
             <div class="card-footer">
-              <small class="text-muted">{{$datas->created_at}}</small>
+              <small class="text-muted">{{ $diff = Carbon\Carbon::parse($datas->created_at)->diffForHumans(Carbon\Carbon::now()) }}</small>
             </div>
           </div>
     </div>
