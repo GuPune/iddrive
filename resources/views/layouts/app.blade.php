@@ -47,10 +47,10 @@
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <li><a class="nav-link scrollto" href="#services">Services</a></li>
-          <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
+          <li><a class="nav-link scrollto active" href="#hero">หน้าหลัก</a></li>
+          <li><a class="nav-link scrollto" href="#about">สินค้าและบริการ</a></li>
+          <li><a class="nav-link scrollto" href="#services">ข่าวสารและกิจกรรม</a></li>
+          <li><a class="nav-link scrollto " href="#portfolio">เกี่ยวกับเรา</a></li>
           <li><a class="nav-link scrollto" href="#team">Team</a></li>
           <li><a href="blog.html">Blog</a></li>
           <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
