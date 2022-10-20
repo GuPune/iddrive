@@ -23,7 +23,7 @@ class BussinesController extends Controller
        $data = NewContent::whereIn('status', ['Y', 'N'])->where('type','2')->get();
 
 
-        return view('pages.bussines.index')->with('data'.$data);
+        return view('pages.bussines.index')->with('data',$data);
     }
 
     /**
