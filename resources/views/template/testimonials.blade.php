@@ -28,7 +28,7 @@
               <p class="card-text">{{$datas->title}}</p>
             </div>
             <div class="card-footer">
-              <small class="text-muted">{{ $diff = Carbon\Carbon::parse($datas->created_at)->format('Y-m-d H:i:s')}}</small>
+              <small class="text-muted">{{ $diff = Carbon\Carbon::parse($datas->created_at)->format('H:i:s d-m-Y ')}}</small>
             </div>
           </div>
     </div>
