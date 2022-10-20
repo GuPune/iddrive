@@ -1,3 +1,7 @@
+@php
+    $data = \App\CoreFunction\Cutstr::getnew();
+@endphp
+
 <section id="testimonials" class="testimonials section section-diff">
     <div class="container" data-aos="fade-up">
       <div class="section-title">
@@ -7,9 +11,7 @@
 
       <div class="testimonials-slider swiper">
         <div class="swiper-wrapper">
-@php
-    $data = \App\CoreFunction\Cutstr::getnew();
-@endphp
+
 
 
 @foreach($data as $datas)

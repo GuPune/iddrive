@@ -97,6 +97,18 @@ class Cutstr extends Model
         return $data;
     }
 
+    public static function getbussines()
+    {
+        $data = NewContent::where('status','Y')->where('type','2')->get();
+        return $data;
+    }
+
+    public static function getproduct()
+    {
+        $data = NewContent::where('status','Y')->where('type','3')->get();
+        return $data;
+    }
+
 
 
 

@@ -1,3 +1,7 @@
+@php
+    $data = \App\CoreFunction\Cutstr::getproduct();
+@endphp
+
 <section id="testproduct" class="testimonials section section-diff section-bg-1">
     <div class="container" data-aos="fade-up">
       <div class="section-title">
@@ -6,69 +10,34 @@
       </div>
 
       <div class="row bottom-gap">
+        @foreach($data as $datas)
         <div class="col-sm-4">
                    <!-- Latest work ITEM -->
                    <div class="service fadeLeft" style="opacity: 1; left: 0px;padding:5px;">
                      <div class="service-icon m-t-n">
+                        @php
+                        $link = env('APP_URL');
+      $fineUrlImg = $link . "/export/new/" . $datas->n_code;
+    $imga = \App\CoreFunction\Cutstr::findimgInhtml($fineUrlImg) != NULL  ? \App\CoreFunction\Cutstr::findimgInhtml($fineUrlImg) : $link . "/img/no_photo.jpg";
+
+@endphp
                        <a href="https://www.workbythai.com/blocks_in_page/184/เวิร์คบายไทย">
-                        <img data-original="https://www.workbythai.com//assets/images/article_184.png" alt="ภาพข่าวกิจกรรม" class="lazy" width="360" src="https://www.workbythai.com//assets/images/article_184.png" style="display: inline;">
+                        <img data-original="{{$imga}}" alt="ภาพข่าวกิจกรรม" class="lazy" width="360" src="{{$imga}}" style="display: inline;">
                     </a>
                      </div>
                      <div class="service-header">
-                        <h5 class="card-title">3 สิ่งต้องห้าม ไม่ควรทำขณะขับรถลุยฝนตกหนัก</h5>
+                        <h5 class="card-title">{{$datas->title}}</h5>
                      </div>
                      <div class="service-desc">
-                           บริษัทเวิร์คบายไทย รับเขียนโปรแกรม รับทำเว็บไซต์ตามความต้องการของลูกค้า มีบริการนัดพบลูกค้านอกสถานทั้งกรุงเทพ และปริมณฑล    <br><font size="2px;" class="pull-right">01/11/2018</font>
-                     </div>
-                   </div>
-                   <!-- Latest work ITEM End -->
-                </div>
-                <div class="col-sm-4">
-                   <!-- Latest work ITEM -->
-                   <div class="service fadeLeft" style="opacity: 1; left: 0px;padding:5px;">
-                     <div class="service-icon m-t-n">
-                       <a href="https://www.workbythai.com/blocks_in_page/183/ พีทีที โกลบอล"><img data-original="https://www.workbythai.com//assets/images/article_183.png" alt="ภาพข่าวกิจกรรม" class="lazy" width="360" src="https://www.workbythai.com//assets/images/article_183.png" style="display: inline;"></a>
-                     </div>
-                     <div class="service-header">
-                        <h5 class="card-title">3 สิ่งต้องห้าม ไม่ควรทำขณะขับรถลุยฝนตกหนัก</h5>
-                     </div>
-                     <div class="service-desc">
-                           บริษัท เวิร์บายไทย ได้นำทีมผู้พัฒนาโปรแกรม เดินทางไปส่งมอบงานโปรแกรม และทำการจัดอบรมให้กับ บริษัท พีทีที โกลบอล เคมิคอล จำกัด จังหวัดระยอง      <br><font size="2px;" class="pull-right">25/10/2018</font>
-                     </div>
-                   </div>
-                   <!-- Latest work ITEM End -->
-                </div>
-                <div class="col-sm-4">
-                   <!-- Latest work ITEM -->
-                   <div class="service fadeLeft" style="opacity: 1; left: 0px;padding:5px;">
-                     <div class="service-icon m-t-n">
-                       <a href="https://www.workbythai.com/blocks_in_page/181/ส่งมอบเว็บไซต์"><img data-original="https://www.workbythai.com//assets/images/article_181.jpg" alt="ภาพข่าวกิจกรรม" class="lazy" width="360" src="https://www.workbythai.com//assets/images/article_181.jpg" style="display: inline;"></a>
-                     </div>
-                     <div class="service-header">
-                        <h5 class="card-title">3 สิ่งต้องห้าม ไม่ควรทำขณะขับรถลุยฝนตกหนัก</h5>
-                     </div>
-                     <div class="service-desc">
-                          บริษัท เวิร์คบายไทย อินเตอร์เน็ต แอนด์มาเก็ตติ้ง จำกัด นำทีม โดย นายทวิรัตน์ สาแก้ว รองกรรมการผู้จัดการเดินทาง มาจัดเทรนนิ่งให้กับ สำนักงานเกษตร ภายในจังหวัดสุรินทร์  <br><font size="2px;" class="pull-right">16/10/2018</font>
+                        {{$datas->name}}
                      </div>
                    </div>
                    <!-- Latest work ITEM End -->
                 </div>
 
-                <div class="col-sm-4">
-                    <!-- Latest work ITEM -->
-                    <div class="service fadeLeft" style="opacity: 1; left: 0px;padding:5px;">
-                      <div class="service-icon m-t-n">
-                        <a href="https://www.workbythai.com/blocks_in_page/181/ส่งมอบเว็บไซต์"><img data-original="https://www.workbythai.com//assets/images/article_181.jpg" alt="ภาพข่าวกิจกรรม" class="lazy" width="360" src="https://www.workbythai.com//assets/images/article_181.jpg" style="display: inline;"></a>
-                      </div>
-                      <div class="service-header">
-                         <h5 class="card-title">3 สิ่งต้องห้าม ไม่ควรทำขณะขับรถลุยฝนตกหนัก</h5>
-                      </div>
-                      <div class="service-desc">
-                           บริษัท เวิร์คบายไทย อินเตอร์เน็ต แอนด์มาเก็ตติ้ง จำกัด นำทีม โดย นายทวิรัตน์ สาแก้ว รองกรรมการผู้จัดการเดินทาง มาจัดเทรนนิ่งให้กับ สำนักงานเกษตร ภายในจังหวัดสุรินทร์  <br><font size="2px;" class="pull-right">16/10/2018</font>
-                      </div>
-                    </div>
-                    <!-- Latest work ITEM End -->
-                 </div>
+                @endforeach
+
+
 
          </div>
 
