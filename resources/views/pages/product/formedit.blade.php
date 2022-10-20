@@ -23,6 +23,13 @@
             </div>
 
             <div class="form-group">
+                <label for="exampleInputUsername1">ข้อความแสดงใต้หัวเรื่อง</label><label  style="color:red;"> * </label>
+                <input type="text" class="form-control" id="name" placeholder="Name" value="{{$data->name}}">
+                <div class="help-block-name-under help-block">กรุณากรอกข้อความแสดงใต้หัวเรื่อง</div>
+              </div>
+
+
+            <div class="form-group">
                 <textarea name="details"  id="details"> {!! $data->des !!}</textarea>
                 <div class="help-block-des help-block">กรุณากรอกรายละเอียด</div>
               </div>

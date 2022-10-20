@@ -22,6 +22,13 @@
             </div>
 
             <div class="form-group">
+                <label for="exampleInputUsername1">ข้อความแสดงใต้หัวเรื่อง</label><label  style="color:red;"> * </label>
+                <input type="text" class="form-control" id="name" placeholder="Name">
+                <div class="help-block-name-under help-block">กรุณากรอกข้อความแสดงใต้หัวเรื่อง</div>
+              </div>
+
+
+            <div class="form-group">
                 <textarea name="details"  id="details"></textarea>
                 <div class="help-block-des help-block">กรุณากรอกรายละเอียด</div>
               </div>
@@ -51,7 +58,7 @@
   </div>
 
   <style type="text/css">
-    .help-block-name,.help-block-des,.help-block-tel,.help-block-email,.help-block-surname,.help-block-gende,.help-block-name-en,.help-block-name-th,.help-block-stock,.help-block-price,.help-block-sku,.help-block-barcode,.help-block-image_thump,.help-block-image_zoom,.help-block-image{
+    .help-block-name,.help-block-des,.help-block-tel,.help-block-email,.help-block-name-under,.help-block-gende,.help-block-name-en,.help-block-name-th,.help-block-stock,.help-block-price,.help-block-sku,.help-block-barcode,.help-block-image_thump,.help-block-image_zoom,.help-block-image{
         display: none;
         color: red;
         text-align: center;
