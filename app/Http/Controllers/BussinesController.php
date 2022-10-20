@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\NewContent;
+use App\CoreFunction;
 
 class BussinesController extends Controller
 {
@@ -12,14 +13,16 @@ class BussinesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
     public function index()
     {
         //
-       // return view('home');
 
-       $data = NewContent::where('status','Y')->get();
 
-       dd($data);
+       $data = NewContent::whereIn('status', ['Y', 'N'])->where('type','2')->get();
+
+
         return view('pages.bussines.index')->with('data'.$data);
     }
 
@@ -31,6 +34,7 @@ class BussinesController extends Controller
     public function create()
     {
         //
+        return view('pages.bussines.form');
     }
 
     /**
@@ -42,6 +46,24 @@ class BussinesController extends Controller
     public function store(Request $request)
     {
         //
+
+       $n_text = htmlentities($request->detail);
+
+       $n_code = CoreFunction\Cutstr::random_password(20);
+
+
+      $save = NewContent::create([
+        'title' => $request->title,
+        'des' => $n_text,
+        'url' => $request->url,
+        'keywords' => $request->keyword,
+        'n_code' => $n_code,
+        'view' => 0,
+        'type' => 1,
+        'status' => 'Y'
+    ]);
+
+        return 1;
     }
 
     /**
@@ -53,6 +75,7 @@ class BussinesController extends Controller
     public function show($id)
     {
         //
+
     }
 
     /**
@@ -64,6 +87,8 @@ class BussinesController extends Controller
     public function edit($id)
     {
         //
+        $data = NewContent::where('id',$id)->first();
+        return view('pages.bussines.formedit')->with('data',$data);
     }
 
     /**
@@ -76,6 +101,18 @@ class BussinesController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $n_text = htmlentities($request->detail);
+        $updatecontent = NewContent::where('id',$id)->update([
+        'title' => $request->title,
+        'des' => $n_text,
+        'url' => $request->url,
+        'keywords' => $request->keyword,
+        'status' => $request->status
+        ]);
+        return response()->json([
+            'msg_return' => 'บันทึกสำเร็จ',
+            'code_return' => 1,
+        ]);
     }
 
     /**
@@ -87,5 +124,14 @@ class BussinesController extends Controller
     public function destroy($id)
     {
         //
+
+        $dele = NewContent::where('id',$id)->update(['status' => 'D']);
+
+
+        return response()->json([
+            'msg_return' => 'บันทึกสำเร็จ',
+            'code_return' => 1,
+        ]);
+
     }
 }
