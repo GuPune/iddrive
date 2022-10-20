@@ -10,11 +10,19 @@
 @php
     $data = \App\CoreFunction\Cutstr::getnew();
 @endphp
+
+
 @foreach($data as $datas)
 <div class="swiper-slide">
     <div class="testimonial-wrap">
         <div class="card">
-            <img src="https://www.img.in.th/images/26d537bac29a32c0d72f7be139fb30da.jpg"  class="img-responsive" alt="Images" style="width: 100%; height:250px">
+            @php
+                        $link = env('APP_URL');
+      $fineUrlImg = $link . "/export/new/" . $datas->n_code;
+    $imga = \App\CoreFunction\Cutstr::findimgInhtml($fineUrlImg) != NULL  ? \App\CoreFunction\Cutstr::findimgInhtml($fineUrlImg) : $link . "/img/no_photo.jpg";
+
+@endphp
+            <img src="{{$imga}}"  class="img-responsive" alt="Images" style="width: 100%; height:250px">
             <div class="card-body">
               <h3 class="card-title">{{$datas->title}}</h3>
               <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
