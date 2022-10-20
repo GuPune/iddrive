@@ -27,10 +27,11 @@
                     </a>
                      </div>
                      <div class="service-header">
-                        <h5 class="card-title">3 สิ่งต้องห้าม ไม่ควรทำขณะขับรถลุยฝนตกหนัก</h5>
+                        <h5 class="card-title">{{$datas->title}}</h5>
                      </div>
                      <div class="service-desc">
-                           บริษัทเวิร์คบายไทย รับเขียนโปรแกรม รับทำเว็บไซต์ตามความต้องการของลูกค้า มีบริการนัดพบลูกค้านอกสถานทั้งกรุงเทพ และปริมณฑล    <br><font size="2px;" class="pull-right">01/11/2018</font>
+                        {{$datas->name}}
+                             <br><font size="2px;" class="pull-right">{{$datas->create_at}}</font>
                      </div>
                    </div>
                    <!-- Latest work ITEM End -->
