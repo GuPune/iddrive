@@ -25,7 +25,7 @@
             <img src="{{$imga}}"  class="img-responsive" alt="Images" style="width: 100%; height:250px">
             <div class="card-body">
               <h3 class="card-title">{{$datas->title}}</h3>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <p class="card-text">{{$datas->title}}</p>
             </div>
             <div class="card-footer">
               <small class="text-muted">{{$datas->created_at}}</small>
