@@ -17,7 +17,7 @@ class ExportHtmlNewController extends Controller
 
  //   dd($id);
 
- $gethtml = NewContent::where('n_code',$id)->value('des');
+ $gethtml = NewContent::where('n_code',$id)->value('detail_th');
 
 
 return view('export')->with('data',$gethtml);
