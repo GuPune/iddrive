@@ -66,7 +66,7 @@
 
         <div class="collapse" id="form-bs">
             <ul class="nav flex-column sub-menu">
-              <li class="nav-item"> <a class="nav-link" href="/admin/bussines">แบบฟอร์ม</a></li>
+              <li class="nav-item"> <a class="nav-link" href="/admin/bussines/create">แบบฟอร์ม</a></li>
               <li class="nav-item"> <a class="nav-link" href="/admin/bussines">ข้อมูลข่าว</a></li>
             </ul>
           </div>
