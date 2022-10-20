@@ -59,7 +59,7 @@ class BussinesController extends Controller
         'keywords' => $request->keyword,
         'n_code' => $n_code,
         'view' => 0,
-        'type' => 1,
+        'type' => 2,
         'status' => 'Y'
     ]);
 
