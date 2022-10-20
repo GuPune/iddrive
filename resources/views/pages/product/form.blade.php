@@ -84,6 +84,8 @@
         var url = $('#url').val();
         var keyword = $('#keyword').val();
         var status = $('#status').val();
+        var name = $('#name').val();
+
 
 
 
@@ -101,7 +103,7 @@
 
                     data:{
                         '_token': "{{ csrf_token() }}",
-                        title:title,detail:detail,url:url,keyword:keyword,status:status},
+                        title:title,detail:detail,url:url,keyword:keyword,status:status,name:name},
                     url: '/admin/product',
                     success: function(datas){
 
@@ -112,6 +114,7 @@
                       var url = $('#url').val('');
                       var keyword = $('#keyword').val('');
                       var status = $('#status').val('');
+                      var name = $('#name').val('');
                       var detail = CKEDITOR.instances.details.setData('');
 
 
@@ -128,7 +131,7 @@
         function validateForm(){
 var title = $('#title').val();
 var detail = CKEDITOR.instances.details.getData();
-
+var name = $('#name').val();
 
 
 
@@ -142,11 +145,16 @@ if(detail == ''){
 }else {
     $('.help-block-des').hide();
 }
+if(name == ''){
+    $('.help-block-name-under').show();
+}else {
+    $('.help-block-name-under').hide();
+}
 
 
 
 
-if(title == '' || detail == ''){
+if(title == '' || detail == ''|| name == ''){
     return false;
 }else{
     return true;

@@ -52,7 +52,7 @@
   </div>
 
   <style type="text/css">
-    .help-block-name,.help-block-des,.help-block-tel,.help-block-email,.help-block-surname,.help-block-gende,.help-block-name-en,.help-block-name-th,.help-block-stock,.help-block-price,.help-block-sku,.help-block-barcode,.help-block-image_thump,.help-block-image_zoom,.help-block-image{
+    .help-block-name,.help-block-des,.help-block-tel,.help-block-email,.help-block-name-under,.help-block-gende,.help-block-name-en,.help-block-name-th,.help-block-stock,.help-block-price,.help-block-sku,.help-block-barcode,.help-block-image_thump,.help-block-image_zoom,.help-block-image{
         display: none;
         color: red;
         text-align: center;
@@ -86,6 +86,7 @@
         var keyword = $('#keyword').val();
         var status = $('#status').val();
         var id = $('#id').val();
+        var name = $('#name').val();
 
 
 
@@ -103,7 +104,7 @@
 
                     data:{
                         '_token': "{{ csrf_token() }}",
-                        title:title,detail:detail,url:url,keyword:keyword,status:status},
+                        title:title,detail:detail,url:url,keyword:keyword,status:status,name:name},
                     url: '/admin/product/'+ + id,
                     success: function(datas){
 
@@ -123,7 +124,7 @@
         function validateForm(){
 var title = $('#title').val();
 var detail = CKEDITOR.instances.details.getData();
-
+var name = $('#name').val();
 
 
 
@@ -137,11 +138,15 @@ if(detail == ''){
 }else {
     $('.help-block-des').hide();
 }
+if(name == ''){
+    $('.help-block-name-under').show();
+}else {
+    $('.help-block-name-under').hide();
+}
 
 
 
-
-if(title == '' || detail == ''){
+if(title == '' || detail == ''|| name == ''){
     return false;
 }else{
     return true;

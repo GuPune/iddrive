@@ -57,6 +57,7 @@ class ProductController extends Controller
         'url' => $request->url,
         'keywords' => $request->keyword,
         'n_code' => $n_code,
+        'name' => $request->name,
         'view' => 0,
         'type' => 3,
         'status' => 'Y'
@@ -107,6 +108,7 @@ class ProductController extends Controller
         'des' => $n_text,
         'url' => $request->url,
         'keywords' => $request->keyword,
+        'name' => $request->name,
         'status' => $request->status
         ]);
         return response()->json([
