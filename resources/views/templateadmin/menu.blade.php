@@ -54,7 +54,7 @@
             <ul class="nav flex-column sub-menu">
               <li class="nav-item"> <a class="nav-link" href="/admin/new/create">แบบฟอร์ม</a></li>
               <li class="nav-item"> <a class="nav-link" href="/admin/new">ข้อมูลข่าว</a></li>
-              <li class="nav-item"> <a class="nav-link" href="/admin/new/setting">ตั้งค่า</a></li>
+              <li class="nav-item"> <a class="nav-link" href="/admin/new-setting">ตั้งค่า</a></li>
             </ul>
           </div>
       </li>
@@ -69,7 +69,7 @@
             <ul class="nav flex-column sub-menu">
               <li class="nav-item"> <a class="nav-link" href="/admin/bussines/create">แบบฟอร์ม</a></li>
               <li class="nav-item"> <a class="nav-link" href="/admin/bussines">ข้อมูลข่าว</a></li>
-              <li class="nav-item"> <a class="nav-link" href="/admin/bussines/setting">ตั้งค่า</a></li>
+              <li class="nav-item"> <a class="nav-link" href="/admin/bussines-setting">ตั้งค่า</a></li>
             </ul>
           </div>
       </li>
@@ -85,7 +85,7 @@
             <ul class="nav flex-column sub-menu">
               <li class="nav-item"> <a class="nav-link" href="/admin/product/create">แบบฟอร์ม</a></li>
               <li class="nav-item"> <a class="nav-link" href="/admin/product">ข้อมูลข่าว</a></li>
-              <li class="nav-item"> <a class="nav-link" href="/admin/product/setting">ตั้งค่า</a></li>
+              <li class="nav-item"> <a class="nav-link" href="/admin/product-setting">ตั้งค่า</a></li>
             </ul>
           </div>
       </li>

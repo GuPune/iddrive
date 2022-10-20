@@ -46,19 +46,27 @@ class BussinesController extends Controller
     public function store(Request $request)
     {
         //
+\Log::info($request->all());
+       $n_text_th = htmlentities($request->detail_th);
+       $n_text_en = htmlentities($request->detail_en);
+       $n_text_ch = htmlentities($request->detail_ch);
 
-       $n_text = htmlentities($request->detail);
-
-       $n_code = CoreFunction\Cutstr::random_password(20);
+     $n_code = CoreFunction\Cutstr::random_password(20);
 
 
       $save = NewContent::create([
-        'title' => $request->title,
-        'des' => $n_text,
+        'title_th' => $request->title_th,
+        'title_en' => $request->title_en,
+        'title_ch' => $request->title_ch,
+        'detail_th' => $n_text_th,
+        'detail_en' => $n_text_en,
+        'detail_ch' => $n_text_ch,
         'url' => $request->url,
         'keywords' => $request->keyword,
         'n_code' => $n_code,
-        'name' => $request->name,
+        'name_ch' => $request->name_ch,
+        'name_th' => $request->name_th,
+        'name_en' => $request->name_en,
         'view' => 0,
         'type' => 2,
         'status' => 'Y'
@@ -67,12 +75,7 @@ class BussinesController extends Controller
         return 1;
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function show($id)
     {
         //
@@ -89,6 +92,7 @@ class BussinesController extends Controller
     {
         //
         $data = NewContent::where('id',$id)->where('type',2)->first();
+
         return view('pages.bussines.formedit')->with('data',$data);
     }
 
@@ -101,15 +105,23 @@ class BussinesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
-        $n_text = htmlentities($request->detail);
+
+        $n_text_th = htmlentities($request->detail_th);
+        $n_text_en = htmlentities($request->detail_en);
+        $n_text_ch = htmlentities($request->detail_ch);
         $updatecontent = NewContent::where('id',$id)->update([
-        'title' => $request->title,
-        'des' => $n_text,
-        'url' => $request->url,
-        'keywords' => $request->keyword,
-        'name' => $request->name,
-        'status' => $request->status
+            'title_th' => $request->title_th,
+            'title_en' => $request->title_en,
+            'title_ch' => $request->title_ch,
+            'detail_th' => $n_text_th,
+            'detail_en' => $n_text_en,
+            'detail_ch' => $n_text_ch,
+            'url' => $request->url,
+            'keywords' => $request->keyword,
+            'name_ch' => $request->name_ch,
+            'name_th' => $request->name_th,
+            'name_en' => $request->name_en,
+            'status' => 'Y'
         ]);
         return response()->json([
             'msg_return' => 'บันทึกสำเร็จ',

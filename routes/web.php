@@ -42,6 +42,10 @@ Route::prefix('admin')->group(function () {
     Route::resource('product', '\App\Http\Controllers\ProductController');
     Route::resource('bussines', '\App\Http\Controllers\BussinesController');
 
+    Route::resource('new-setting', '\App\Http\Controllers\NewSettingController');
+    Route::resource('product-setting', '\App\Http\Controllers\ProductSettingController');
+    Route::resource('bussines-setting', '\App\Http\Controllers\BussinesSettingController');
+
 });
 
 

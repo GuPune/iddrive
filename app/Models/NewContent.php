@@ -13,14 +13,20 @@ class NewContent extends Model
 
     protected $fillable = [
         'id',
-        'title',
-        'des',
+        'title_th',
+        'title_en',
+        'title_ch',
+        'detail_th',
+        'detail_en',
+        'detail_ch',
         'url',
         'keywords',
         'status',
         'n_code',
         'type',
-        'name',
+        'name_th',
+        'name_en',
+        'name_ch',
         'view'
     ];
 }
