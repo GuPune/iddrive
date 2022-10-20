@@ -121,7 +121,7 @@ class BussinesController extends Controller
             'name_ch' => $request->name_ch,
             'name_th' => $request->name_th,
             'name_en' => $request->name_en,
-            'status' => 'Y'
+            'status' => $request->status
         ]);
         return response()->json([
             'msg_return' => 'บันทึกสำเร็จ',
