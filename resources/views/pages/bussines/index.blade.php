@@ -33,6 +33,9 @@
                   </tr>
                 </thead>
                 <tbody>
+                    @if($data)
+
+
                     @foreach($data as $k => $items)
                   <tr>
                     <td>{{ ++$k }}</td>
@@ -70,6 +73,7 @@
                     </td>
                   </tr>
               @endforeach
+              @endif
                 </tbody>
               </table>
             </div>
