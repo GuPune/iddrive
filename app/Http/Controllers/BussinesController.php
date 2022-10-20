@@ -87,7 +87,7 @@ class BussinesController extends Controller
     public function edit($id)
     {
         //
-        $data = NewContent::where('id',$id)->first();
+        $data = NewContent::where('id',$id)->where('type',2)->first();
         return view('pages.bussines.formedit')->with('data',$data);
     }
 

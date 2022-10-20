@@ -84,7 +84,8 @@ class NewController extends Controller
     public function edit($id)
     {
         //
-        $data = NewContent::where('id',$id)->first();
+
+        $data = NewContent::where('id',$id)->where('type',1)->first();
         return view('pages.new.formedit')->with('data',$data);
     }
 

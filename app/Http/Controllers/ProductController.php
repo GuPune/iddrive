@@ -86,7 +86,8 @@ class ProductController extends Controller
     public function edit($id)
     {
         //
-        $data = NewContent::where('id',$id)->first();
+
+        $data = NewContent::where('id',$id)->where('type',3)->first();
         return view('pages.product.formedit')->with('data',$data);
     }
 
