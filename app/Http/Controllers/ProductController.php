@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\NewContent;
+use App\CoreFunction;
 
 class ProductController extends Controller
 {
@@ -11,11 +13,16 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
     public function index()
     {
         //
-      //  return view('home');
-        return view('pages.product.index');
+
+
+       $data = NewContent::whereIn('status', ['Y', 'N'])->where('type','3')->get();
+
+        return view('pages.product.index')->with('data',$data);
     }
 
     /**
@@ -26,6 +33,7 @@ class ProductController extends Controller
     public function create()
     {
         //
+        return view('pages.product.form');
     }
 
     /**
@@ -37,6 +45,24 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         //
+
+       $n_text = htmlentities($request->detail);
+
+       $n_code = CoreFunction\Cutstr::random_password(20);
+
+
+      $save = NewContent::create([
+        'title' => $request->title,
+        'des' => $n_text,
+        'url' => $request->url,
+        'keywords' => $request->keyword,
+        'n_code' => $n_code,
+        'view' => 0,
+        'type' => 1,
+        'status' => 'Y'
+    ]);
+
+        return 1;
     }
 
     /**
@@ -48,6 +74,7 @@ class ProductController extends Controller
     public function show($id)
     {
         //
+
     }
 
     /**
@@ -59,6 +86,8 @@ class ProductController extends Controller
     public function edit($id)
     {
         //
+        $data = NewContent::where('id',$id)->first();
+        return view('pages.product.formedit')->with('data',$data);
     }
 
     /**
@@ -71,6 +100,18 @@ class ProductController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $n_text = htmlentities($request->detail);
+        $updatecontent = NewContent::where('id',$id)->update([
+        'title' => $request->title,
+        'des' => $n_text,
+        'url' => $request->url,
+        'keywords' => $request->keyword,
+        'status' => $request->status
+        ]);
+        return response()->json([
+            'msg_return' => 'บันทึกสำเร็จ',
+            'code_return' => 1,
+        ]);
     }
 
     /**
@@ -82,5 +123,14 @@ class ProductController extends Controller
     public function destroy($id)
     {
         //
+
+        $dele = NewContent::where('id',$id)->update(['status' => 'D']);
+
+
+        return response()->json([
+            'msg_return' => 'บันทึกสำเร็จ',
+            'code_return' => 1,
+        ]);
+
     }
 }

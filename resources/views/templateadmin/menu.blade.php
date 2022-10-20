@@ -81,7 +81,7 @@
 
         <div class="collapse" id="form-product">
             <ul class="nav flex-column sub-menu">
-              <li class="nav-item"> <a class="nav-link" href="/admin/product">แบบฟอร์ม</a></li>
+              <li class="nav-item"> <a class="nav-link" href="/admin/product/create">แบบฟอร์ม</a></li>
               <li class="nav-item"> <a class="nav-link" href="/admin/product">ข้อมูลข่าว</a></li>
             </ul>
           </div>
