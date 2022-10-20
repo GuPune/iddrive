@@ -23,7 +23,7 @@
 
 @endphp
                        <a href="https://www.workbythai.com/blocks_in_page/184/เวิร์คบายไทย">
-                        <img data-original="{{$imga}}" alt="ภาพข่าวกิจกรรม" class="lazy" width="360" src="{{$imga}}" style="display: inline;">
+                        <img data-original="{{$imga}}" alt="ภาพข่าวกิจกรรม" class="lazy" src="{{$imga}}" style="display: inline;width: 100%; height:250px;">
                     </a>
                      </div>
                      <div class="service-header">
