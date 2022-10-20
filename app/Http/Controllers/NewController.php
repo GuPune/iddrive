@@ -44,19 +44,27 @@ class NewController extends Controller
     {
         //
 
-       $n_text = htmlentities($request->detail);
+       $n_text_th = htmlentities($request->detail_th);
+       $n_text_en = htmlentities($request->detail_en);
+       $n_text_ch = htmlentities($request->detail_ch);
 
-       $n_code = CoreFunction\Cutstr::random_password(20);
+     $n_code = CoreFunction\Cutstr::random_password(20);
 
 
       $save = NewContent::create([
-        'title' => $request->title,
-        'des' => $n_text,
+        'title_th' => $request->title_th,
+        'title_en' => $request->title_en,
+        'title_ch' => $request->title_ch,
+        'detail_th' => $n_text_th,
+        'detail_en' => $n_text_en,
+        'detail_ch' => $n_text_ch,
         'url' => $request->url,
         'keywords' => $request->keyword,
         'n_code' => $n_code,
+        'name_ch' => $request->name_ch,
+        'name_th' => $request->name_th,
+        'name_en' => $request->name_en,
         'view' => 0,
-        'name' => $request->name,
         'type' => 1,
         'status' => 'Y'
     ]);
@@ -99,15 +107,23 @@ class NewController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
-        $n_text = htmlentities($request->detail);
+
+        $n_text_th = htmlentities($request->detail_th);
+        $n_text_en = htmlentities($request->detail_en);
+        $n_text_ch = htmlentities($request->detail_ch);
         $updatecontent = NewContent::where('id',$id)->update([
-        'title' => $request->title,
-        'des' => $n_text,
-        'url' => $request->url,
-        'keywords' => $request->keyword,
-        'name' => $request->name,
-        'status' => $request->status
+            'title_th' => $request->title_th,
+            'title_en' => $request->title_en,
+            'title_ch' => $request->title_ch,
+            'detail_th' => $n_text_th,
+            'detail_en' => $n_text_en,
+            'detail_ch' => $n_text_ch,
+            'url' => $request->url,
+            'keywords' => $request->keyword,
+            'name_ch' => $request->name_ch,
+            'name_th' => $request->name_th,
+            'name_en' => $request->name_en,
+            'status' => $request->status
         ]);
         return response()->json([
             'msg_return' => 'บันทึกสำเร็จ',

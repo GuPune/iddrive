@@ -46,7 +46,7 @@ class BussinesController extends Controller
     public function store(Request $request)
     {
         //
-\Log::info($request->all());
+
        $n_text_th = htmlentities($request->detail_th);
        $n_text_en = htmlentities($request->detail_en);
        $n_text_ch = htmlentities($request->detail_ch);
