@@ -14,7 +14,7 @@
     <div class="col-md-12 grid-margin stretch-card">
       <div class="card">
         <div class="card-body">
-          <h4 class="card-title">แก้ไขแบบฟอร์ม ข่าวสารและกิจกรรม</h4>
+          <h4 class="card-title">แก้ไขแบบฟอร์ม ธุรกิจของเรา</h4>
             <div class="form-group">
               <label for="exampleInputUsername1">หัวข้อ / ชื่อเรื่อง  </label><label  style="color:red;"> * </label>
               <input type="hidden" class="form-control" id="id" value="{{$data->id}}">
