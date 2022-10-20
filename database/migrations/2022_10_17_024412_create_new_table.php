@@ -19,6 +19,7 @@ class CreateNewTable extends Migration
             $table->text('des')->nullable();
             $table->text('url')->nullable();
             $table->text('keywords')->nullable();
+            $table->text('name')->nullable();
             $table->string('status')->nullable();
             $table->string('type')->nullable();
             $table->integer('view')->nullable();

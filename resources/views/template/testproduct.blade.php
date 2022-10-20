@@ -22,8 +22,8 @@
                      </div>
                    </div>
                    <!-- Latest work ITEM End -->
-                </div><div class="col-sm-4">
-
+                </div>
+                <div class="col-sm-4">
                    <!-- Latest work ITEM -->
                    <div class="service fadeLeft" style="opacity: 1; left: 0px;padding:5px;">
                      <div class="service-icon m-t-n">

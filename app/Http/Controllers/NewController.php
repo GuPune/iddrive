@@ -56,6 +56,7 @@ class NewController extends Controller
         'keywords' => $request->keyword,
         'n_code' => $n_code,
         'view' => 0,
+        'name' => $request->name,
         'type' => 1,
         'status' => 'Y'
     ]);
@@ -105,6 +106,7 @@ class NewController extends Controller
         'des' => $n_text,
         'url' => $request->url,
         'keywords' => $request->keyword,
+        'name' => $request->name,
         'status' => $request->status
         ]);
         return response()->json([

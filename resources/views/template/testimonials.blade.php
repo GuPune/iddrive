@@ -7,57 +7,27 @@
 
       <div class="testimonials-slider swiper">
         <div class="swiper-wrapper">
-
-          <div class="swiper-slide">
-            <div class="testimonial-wrap">
-
-                <div class="card">
-                    <img src="https://www.img.in.th/images/26d537bac29a32c0d72f7be139fb30da.jpg"  class="img-responsive" alt="Images" style="width: 100%; height:250px">
-                    <div class="card-body">
-                      <h3 class="card-title">3 สิ่งต้องห้าม ไม่ควรทำขณะขับรถลุยฝนตกหนัก</h3>
-                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    </div>
-                    <div class="card-footer">
-                      <small class="text-muted">Last updated 3 mins ago</small>
-                    </div>
-                  </div>
-
-
+@php
+    $data = \App\CoreFunction\Cutstr::getnew();
+@endphp
+@foreach($data as $datas)
+<div class="swiper-slide">
+    <div class="testimonial-wrap">
+        <div class="card">
+            <img src="https://www.img.in.th/images/26d537bac29a32c0d72f7be139fb30da.jpg"  class="img-responsive" alt="Images" style="width: 100%; height:250px">
+            <div class="card-body">
+              <h3 class="card-title">{{$datas->title}}</h3>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
             </div>
-
-          </div><!-- End testimonial item -->
-
-          <div class="swiper-slide">
-            <div class="testimonial-wrap">
-                <div class="card">
-                    <img src="https://www.img.in.th/images/26d537bac29a32c0d72f7be139fb30da.jpg"  class="img-responsive" alt="Images" style="width: 100%; height:250px">
-                    <div class="card-body">
-                      <h3 class="card-title">3 สิ่งต้องห้าม ไม่ควรทำขณะขับรถลุยฝนตกหนัก</h3>
-                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    </div>
-                    <div class="card-footer">
-                      <small class="text-muted">Last updated 3 mins ago</small>
-                    </div>
-                  </div>
-
+            <div class="card-footer">
+              <small class="text-muted">{{$datas->created_at}}</small>
             </div>
-          </div><!-- End testimonial item -->
+          </div>
+    </div>
+  </div><!-- End testimonial item -->
 
-          <div class="swiper-slide">
-            <div class="testimonial-wrap">
-                <div class="card">
-                    <img src="https://www.img.in.th/images/26d537bac29a32c0d72f7be139fb30da.jpg"  class="img-responsive" alt="Images" style="width: 100%; height:250px">
-                    <div class="card-body">
-                      <h3 class="card-title">3 สิ่งต้องห้าม ไม่ควรทำขณะขับรถลุยฝนตกหนัก</h3>
-                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    </div>
-                    <div class="card-footer">
-                      <small class="text-muted">Last updated 3 mins ago</small>
-                    </div>
-                  </div>
+@endforeach
 
-            </div>
-          </div><!-- End testimonial item -->
 
 
         </div>

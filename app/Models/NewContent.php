@@ -20,6 +20,7 @@ class NewContent extends Model
         'status',
         'n_code',
         'type',
+        'name',
         'view'
     ];
 }

@@ -6,6 +6,7 @@ namespace App\CoreFunction;
 use Illuminate\Database\Eloquent\Model;
 use App;
 use App\Models\Branch;
+use App\Models\NewContent;
 use DB;
 use DOMDocument;
 use Log;
@@ -88,6 +89,12 @@ class Cutstr extends Model
             $pass .= @$text[rand(0, $text_length)];
         }
         return $pass;
+    }
+
+    public static function getnew()
+    {
+        $data = NewContent::where('status','Y')->where('type','1')->get();
+        return $data;
     }
 
 
