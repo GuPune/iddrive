@@ -7,7 +7,7 @@
     <div class="col-md-6 grid-margin stretch-card">
       <div class="card">
         <div class="card-body">
-          <h4 class="card-title">Website Name</h4>
+          <h4 class="card-title">Multi</h4>
 
 
             <div class="form-group">

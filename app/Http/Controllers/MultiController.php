@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Multi;
 use Illuminate\Http\Request;
 
 class MultiController extends Controller
@@ -14,9 +15,11 @@ class MultiController extends Controller
     public function index(Request $request,$id)
     {
         //
-        dd($id);
 
-        return ('multi');
+
+        $alldata = Multi::all();
+
+        return view('multi')->with('data',$alldata);
     }
 
     /**
