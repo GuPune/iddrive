@@ -50,7 +50,7 @@
 <img src="<?= $datas ?>" style="height:100px; width:150px; " />
                     </td>
                     <td>
-                        {{ $items->title }}
+                        {{ $items->title_th }}
                     </td>
                     <td>
                         @if ($items->status == 'Y')
