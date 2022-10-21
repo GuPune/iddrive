@@ -60,7 +60,7 @@
       </li>
       <li class="nav-item">
         <a class="nav-link" data-toggle="collapse" href="#form-bs" aria-expanded="false" aria-controls="form-bs">
-          <i class="typcn typcn-film menu-icon"></i>
+         <i class="typcn typcn-th-small-outline menu-icon"></i>
           <span class="menu-title">ธุรกิจของเรา</span>
           <i class="menu-arrow"></i>
         </a>
@@ -76,7 +76,7 @@
 
       <li class="nav-item">
         <a class="nav-link" data-toggle="collapse" href="#form-product" aria-expanded="false" aria-controls="form-product">
-          <i class="typcn typcn-film menu-icon"></i>
+            <i class="typcn typcn-globe-outline menu-icon"></i>
           <span class="menu-title">สินค้าและบริการ</span>
           <i class="menu-arrow"></i>
         </a>
