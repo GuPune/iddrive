@@ -6,7 +6,6 @@ use App\Http\Controllers\CkeditorController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\ExportHtmlNewController;
-use App\Http\Controllers\MultiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,9 +46,7 @@ Route::prefix('admin')->group(function () {
     Route::resource('product-setting', '\App\Http\Controllers\ProductSettingController');
     Route::resource('bussines-setting', '\App\Http\Controllers\BussinesSettingController');
 
-
-    Route::get('/mutli/{id}/edit', [MultiController::class, 'edit'])->name('dashboard');
-
+    Route::resource('mutli/', '\App\Http\Controllers\MultiController');
 
 });
 
