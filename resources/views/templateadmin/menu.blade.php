@@ -92,13 +92,13 @@
 
 
       <li class="nav-item">
-        <a class="nav-link" data-toggle="collapse" href="#form-product" aria-expanded="false" aria-controls="form-product">
+        <a class="nav-link" data-toggle="collapse" href="#form-multi" aria-expanded="false" aria-controls="form-multi">
             <i class="typcn typcn-globe-outline menu-icon"></i>
           <span class="menu-title">ตั้งค่าภาษา </span>
           <i class="menu-arrow"></i>
         </a>
 
-        <div class="collapse" id="form-product">
+        <div class="collapse" id="form-multi">
             <ul class="nav flex-column sub-menu">
               <li class="nav-item"> <a class="nav-link" href="/admin/mutli/th">ภาษาไทย</a></li>
               <li class="nav-item"> <a class="nav-link" href="/admin/mutli/en">ภาษาอังกฤษ</a></li>
