@@ -14,7 +14,7 @@
     <div class="col-md-12 grid-margin stretch-card">
       <div class="card">
         <div class="card-body">
-          <h4 class="card-title">แบบฟอร์ม ธุรกิจของเรา</h4>
+          <h4 class="card-title">แบบฟอร์ม ข่าวสาร</h4>
             <div class="form-group">
               <label for="exampleInputUsername1">หัวข้อ / ชื่อเรื่อง  (ไทย)</label><label  style="color:red;"> * </label>
               <input type="text" class="form-control" id="title_th" placeholder="ใส่ภาษาไทย">
