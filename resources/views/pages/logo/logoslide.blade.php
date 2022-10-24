@@ -22,6 +22,7 @@
                   <table id="myTable">
                     <thead>
                       <tr>
+
                         <th>
                           ลำดับ
                         </th>
@@ -40,21 +41,28 @@
                       </tr>
                     </thead>
                     <tbody>
-
+                        @foreach($data as $k => $items)
                       <tr>
-                        <td>xx</td>
+
+                        <td>{{ ++$k }}</td>
                         <td>
- xxx
+{{$items->slide_path}}
                         </td>
                         <td>
-                         xxx
+                            {{$items->slide_topic}}
                         </td>
                         <td>
-                          xxx
+                            {{$items->status}}
+                        </td>
+
+                        <td>
+                            <a href="{{ url('/admin/logoslide/' . $items->id . '/edit') }}" class="btnx editmdi btn-edit"><i class="mdi mdi-brush"></i></a>
+
+                            <button type="button" class="btnx delmdi btn-delete" id="dele" onclick="del({{$items->id}});"><i class="mdi mdi-backspace"></i></button>
                         </td>
 
                       </tr>
-
+                      @endforeach
                     </tbody>
                   </table>
                 </div>
@@ -69,6 +77,9 @@
 
   <script>
 
+$(document).ready( function () {
+      $('#myTable').DataTable();
+  } );
 
     var $link = "<?php echo url('/public/product/'); ?>";
 

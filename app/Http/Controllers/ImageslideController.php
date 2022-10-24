@@ -15,7 +15,9 @@ class ImageslideController extends Controller
     public function index()
     {
         //
-        return view('pages.logo.logoslide');
+
+        $data = SlideImage::where('slide_type','1')->get();
+        return view('pages.logo.logoslide')->with('data',$data);
     }
 
     /**
