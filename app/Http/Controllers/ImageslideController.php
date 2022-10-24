@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\SlideImage;
 use Illuminate\Http\Request;
 
 class ImageslideController extends Controller
@@ -14,6 +15,7 @@ class ImageslideController extends Controller
     public function index()
     {
         //
+        return view('pages.logo.logoslide');
     }
 
     /**
@@ -24,6 +26,7 @@ class ImageslideController extends Controller
     public function create()
     {
         //
+        return view('pages.logo.createlogoslide');
     }
 
     /**
@@ -35,6 +38,25 @@ class ImageslideController extends Controller
     public function store(Request $request)
     {
         //
+
+
+
+
+$inse = SlideImage::create([
+    'slide_topic' => $request->title_th,
+    'slide_type' => 1,
+    'slide_detail' => $request->detais,
+    'slide_path' => $request->images_slide,
+    'status' => 'Y',
+    'slide_url' => $request->url,
+
+]);
+
+
+        return response()->json([
+            'msg_return' => 'บันทึกสำเร็จ',
+            'code_return' => 1,
+        ]);
     }
 
     /**
