@@ -46,7 +46,8 @@
 
                         <td>{{ ++$k }}</td>
                         <td>
-{{$items->slide_path}}
+
+<img src="/public/product/{{$items->slide_path}}" style="height:100px; width:150px; " />
                         </td>
                         <td>
                             {{$items->slide_topic}}
@@ -80,6 +81,58 @@
 $(document).ready( function () {
       $('#myTable').DataTable();
   } );
+
+  function del(id)
+{
+   // alert(id);
+
+    deleteConf(id);
+}
+
+
+function deleteConf(id) {
+            swal({
+                title: "คุณต้องการลบจริงหรือไม่?",
+                text: "ข้อมูลไม่สามารถกู้คืนได้!",
+                icon: "warning",
+                buttons: [
+                    'ยกเลิกลบรายการ',
+                    'ลบรายการ'
+                ],
+                dangerMode: true,
+            }).then(function(isConfirm) {
+                if (isConfirm) {
+                    swal({
+                        title: 'ลบรายการ!',
+                        text: 'ลบรายการเรียบร้อย',
+                        icon: 'success'
+                    }).then(function() {
+                        $.ajaxSetup({
+                            headers: {
+                                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                            }
+                        });
+
+                        $.ajax({
+                            dataType: 'json',
+                            type:'DELETE',
+                            data:{
+                                '_token': "{{ csrf_token() }}",
+                                id:id},
+                            url: '/admin/logoslide/' + id,
+                            success: function(datas){
+
+                                location.reload();
+                            }
+
+                        })
+                    });
+                } else {
+                    swal("ยกเลิก", "ยกเลิกรายการ", "error");
+                }
+            });
+        } // error form show text
+
 
     var $link = "<?php echo url('/public/product/'); ?>";
 

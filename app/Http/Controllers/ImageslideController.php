@@ -104,5 +104,6 @@ $inse = SlideImage::create([
     public function destroy($id)
     {
         //
+        \Log::info($id);
     }
 }
