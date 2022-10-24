@@ -24,7 +24,7 @@
     $imga = \App\CoreFunction\Cutstr::findimgInhtml($fineUrlImg) != NULL  ? \App\CoreFunction\Cutstr::findimgInhtml($fineUrlImg) : $link . "/img/no_photo.jpg";
 
 @endphp
-            <img src="{{$imga}}"  class="img-responsive" alt="Images" style="width: 100%; height:250px">
+            <img src=""  class="img-responsive" alt="Images" style="width: 100%; height:250px">
             <div class="card-body">
               <h3 class="card-title">{{$datas->title}}</h3>
               <p class="card-text">{{$datas->title}}</p>

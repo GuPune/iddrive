@@ -32,13 +32,13 @@
         </a>
         <div class="collapse" id="ui-basic">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">โลโก้เว็บไซค์</a></li>
-            <li class="nav-item"> <a class="nav-link" href="pages/ui-features/dropdowns.html">ภาพสไลค์</a></li>
-            <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">โลโก้แบรนด์</a></li>
-            <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">ภาพสไลค์(เกี่ยวกับองค์กร)</a></li>
-            <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">โลโก้ลูกค้าของเรา</a></li>
-            <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">โลโก้การรับรอง</a></li>
-            <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">โลโก้ธุรกิจของเรา</a></li>
+            <li class="nav-item"> <a class="nav-link" href="/admin/logoweb">โลโก้เว็บไซค์</a></li>
+            <li class="nav-item"> <a class="nav-link" href="/admin/logoweb">ภาพสไลค์</a></li>
+            <li class="nav-item"> <a class="nav-link" href="/admin/logoweb">โลโก้แบรนด์</a></li>
+            <li class="nav-item"> <a class="nav-link" href="/admin/logoweb">ภาพสไลค์(เกี่ยวกับองค์กร)</a></li>
+            <li class="nav-item"> <a class="nav-link" href="/admin/logoweb">โลโก้ลูกค้าของเรา</a></li>
+            <li class="nav-item"> <a class="nav-link" href="/admin/logoweb">โลโก้การรับรอง</a></li>
+            <li class="nav-item"> <a class="nav-link" href="/admin/logoweb">โลโก้ธุรกิจของเรา</a></li>
           </ul>
         </div>
       </li>

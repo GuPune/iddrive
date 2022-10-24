@@ -47,6 +47,15 @@ Route::prefix('admin')->group(function () {
     Route::resource('product-setting', '\App\Http\Controllers\ProductSettingController');
     Route::resource('bussines-setting', '\App\Http\Controllers\BussinesSettingController');
 
+    Route::resource('logoweb', '\App\Http\Controllers\LogowebController');
+    Route::resource('logoslide', '\App\Http\Controllers\ImageslideController');
+    Route::resource('logobrand', '\App\Http\Controllers\LogobrandController');
+    Route::resource('logoslidebrand', '\App\Http\Controllers\ImageslideaboutControlleController');
+    Route::resource('logocustomer', '\App\Http\Controllers\LogocustomerController');
+    Route::resource('logocer', '\App\Http\Controllers\LogocerController');
+    Route::resource('logobussines', '\App\Http\Controllers\LogobussinesController');
+
+    Route::post('/product/uploadimage', [App\Http\Controllers\ProductController::class, 'upload']);
 
 
     Route::get('/mutli/{id}', [MultiController::class, 'index'])->name('dashboard');

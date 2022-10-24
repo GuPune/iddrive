@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\NewContent;
 use App\CoreFunction;
+use Illuminate\Support\Str;
 
 class ProductController extends Controller
 {
@@ -151,5 +152,46 @@ class ProductController extends Controller
             'code_return' => 1,
         ]);
 
+    }
+
+    public function upload(Request $request)
+    {
+        //
+
+
+        $random = Str::random(20);
+
+
+        if ($files = $request->file('images_logo')) {
+            $destinationPath = 'public/product/'; // upload path
+            $profileImage = date('YmdHis').$random. "." . $files->getClientOriginalExtension();
+
+            $files->move($destinationPath, $profileImage);
+        }
+
+        if ($files = $request->file('images_shotcut')) {
+            $destinationPath = 'public/product/'; // upload path
+            $profileImage = date('YmdHis').$random. "." . $files->getClientOriginalExtension();
+
+            $files->move($destinationPath, $profileImage);
+        }
+
+        if ($files = $request->file('images_fut')) {
+            $destinationPath = 'public/product/'; // upload path
+            $profileImage = date('YmdHis').$random. "." . $files->getClientOriginalExtension();
+
+            $files->move($destinationPath, $profileImage);
+        }
+
+
+
+
+
+
+
+
+        return response()->json([
+            'data' => $profileImage
+        ], 200);
     }
 }
