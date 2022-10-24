@@ -6,6 +6,7 @@ namespace App\CoreFunction;
 use Illuminate\Database\Eloquent\Model;
 use App;
 use App\Models\Branch;
+use App\Models\ConfigImage;
 use App\Models\NewContent;
 use DB;
 use DOMDocument;
@@ -108,6 +109,10 @@ class Cutstr extends Model
         $data = NewContent::where('status','Y')->where('type','3')->get();
         return $data;
     }
+
+
+
+
 
 
 

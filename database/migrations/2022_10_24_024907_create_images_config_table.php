@@ -17,6 +17,10 @@ class CreateImagesConfigTable extends Migration
             $table->id();
             $table->text('cg_name')->nullable();
             $table->text('cg_value')->nullable();
+            $table->text('image_shotcut')->nullable();
+            $table->text('image_logo')->nullable();
+            $table->text('image_fut')->nullable();
+            $table->string('type')->nullable();
             $table->timestamps();
         });
     }

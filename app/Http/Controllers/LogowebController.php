@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ConfigImage;
 use Illuminate\Http\Request;
 
 class LogowebController extends Controller
@@ -14,7 +15,12 @@ class LogowebController extends Controller
     public function index()
     {
         //
-        return view('pages.logo.logoweb');
+
+$logo = ConfigImage::where('type','Y')->first();
+
+
+
+        return view('pages.logo.logoweb')->with('logo',$logo);
     }
 
     /**
@@ -47,6 +53,7 @@ class LogowebController extends Controller
     public function show($id)
     {
         //
+
     }
 
     /**
@@ -58,6 +65,12 @@ class LogowebController extends Controller
     public function edit($id)
     {
         //
+        \Log::info($id);
+
+        return response()->json([
+            'msg_return' => 'บันทึกสำเร็จ',
+            'code_return' => 1,
+        ]);
     }
 
     /**
@@ -69,7 +82,19 @@ class LogowebController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+
+        $updatecontent = ConfigImage::where('id',$id)->update([
+            'image_shotcut' => $request->images_shotcut,
+            'image_logo' => $request->images_logo,
+            'image_fut' => $request->images_fut,
+        ]);
+
+
+        return response()->json([
+            'msg_return' => 'บันทึกสำเร็จ',
+            'code_return' => 1,
+        ]);
     }
 
     /**

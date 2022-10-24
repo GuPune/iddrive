@@ -11,15 +11,15 @@
             <div class="form-group">
               <label for="exampleInputUsername1">โลโก้เว็บไซต์
                 *</label>
+                <input type="hidden" name="id" id="id"  value="{{$logo->id}}">
+
               <div class="form-group" style="padding-left:15px;">
                 <label for="filemagazine"><B>โลโก้</B><font color="red">*</font></label><br>
                 <input type="file" name="images_logo" id="images_logo" ><br>
-                <input type="text" class="form-control" name="image_logo" id="image_logo" value="">
-                <img src="" alt="รูปภาพประจำสินค้า" class="img-fluid rounded mx-auto d-block profile-image" id="showImagelogo" width="300" height="150">
+                <input type="hidden" class="form-control" name="image_logo" id="image_logo" value="{{$logo->image_logo}}">
+                <img src="/public/product/{{$logo->image_logo}}" alt="รูปภาพประจำสินค้า" class="img-fluid rounded mx-auto d-block profile-image" id="showImagelogo" width="300" height="150">
             </div>
             </div>
-            <button type="button" class="btn btn-info btn-lg btn-block save-logo">บันทึก
-              </button>
 
         </div>
       </div>
@@ -33,13 +33,11 @@
             <div class="form-group" style="padding-left:15px;">
 
               <input type="file" name="images_shotcut" id="images_shotcut" ><br>
-              <input type="text" class="form-control" name="image_shotcut" id="image_shotcut" value="">
-              <img src="" alt="รูปภาพประจำสินค้า" class="img-fluid rounded mx-auto d-block profile-image" id="showImageshotcut" width="300" height="150">
+              <input type="hidden" class="form-control" name="image_shotcut" id="image_shotcut" value="{{$logo->image_shotcut}}">
+              <img src="/public/product/{{$logo->image_shotcut}}" alt="รูปภาพประจำสินค้า" class="img-fluid rounded mx-auto d-block profile-image" id="showImageshotcut" width="300" height="150">
           </div>
           </div>
-            <button type="button" class="btn btn-info btn-lg btn-block save-shot">บันทึก
 
-              </button>
         </div>
       </div>
     </div>
@@ -53,15 +51,19 @@
               <div class="form-group" style="padding-left:15px;">
 
                 <input type="file" name="images_fut" id="images_fut" ><br>
-                <input type="text" class="form-control" name="image_fut" id="images_fut" value="">
-                <img src="" alt="รูปภาพประจำสินค้า" class="img-fluid rounded mx-auto d-block profile-image" id="showImagefut" width="300" height="150">
+                <input type="hidden" class="form-control" name="image_fut" id="image_fut" value="{{$logo->image_fut}}">
+                <img src="/public/product/{{$logo->image_fut}}" alt="รูปภาพประจำสินค้า" class="img-fluid rounded mx-auto d-block profile-image" id="showImagefut" width="300" height="150">
             </div>
             </div>
-              <button type="button" class="btn btn-info btn-lg btn-block save-fut">บันทึก
 
-                </button>
           </div>
         </div>
+      </div>
+
+
+      <div class="col-md-12 grid-margin stretch-card">
+        <button type="button" class="btn btn-info btn-lg btn-block save-fut">บันทึก
+        </button>
       </div>
   </div>
 
@@ -73,21 +75,38 @@
 
     var $link = "<?php echo url('/public/product/'); ?>";
 
-    $('body').on('click', '.save-logo', function () {
 
-        alert('save-logo');
-    });
 
     $('body').on('click', '.save-fut', function () {
 
-        alert('save-fut');
+        var id = $('#id').val();
+        var image_logo = $('#image_logo').val();
+        var image_shotcut = $('#image_shotcut').val();
+        var image_fut = $('#image_fut').val();
+
+
+        $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                    });
+
+                $.ajax({
+                    dataType: 'json',
+                    type:'PUT',
+                    data:{
+                        '_token': "{{ csrf_token() }}",
+                        images_logo:image_logo,images_shotcut:image_shotcut,images_fut:image_fut},
+                    url: '/admin/logoweb/'+ id,
+
+                    success: function(datas){
+
+                        swal("บันทึกสำเร็จ!", "บันทึกสำเร็จ!", "success");
+
+                    }
+                })
 });
 
-
-$('body').on('click', '.save-shot', function () {
-    alert('save-shot');
-
-});
 
 
 
