@@ -95,6 +95,7 @@ class Cutstr extends Model
     public static function getnew()
     {
         $data = NewContent::where('status','Y')->where('type','1')->get();
+
         return $data;
     }
 

@@ -22,7 +22,7 @@
     $imga = \App\CoreFunction\Cutstr::findimgInhtml($fineUrlImg) != NULL  ? \App\CoreFunction\Cutstr::findimgInhtml($fineUrlImg) : $link . "/img/no_photo.jpg";
 
 @endphp
-                       <a href="https://www.workbythai.com/blocks_in_page/184/เวิร์คบายไทย">
+                       <a href="#">
                         <img data-original="{{$imga}}" alt="ภาพข่าวกิจกรรม" class="lazy" src="{{$imga}}" style="display: inline;width: 100%; height:250px;">
                     </a>
                      </div>
