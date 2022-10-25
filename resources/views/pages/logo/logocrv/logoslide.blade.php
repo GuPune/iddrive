@@ -31,11 +31,11 @@
             <div class="card">
 
                 <div class="card-header py-3">
-                    สไลด์หน้าเว็บ
+                    โลโก้การรับรอง
                 </div>
                 <div class="py-2"  style="text-align:right;padding:3px;">
-                    <a href="{{ route('logoslide.create') }}" class="btn btn-success">
-                       เพิ่มสไลด์หน้าเว็บ
+                    <a href="{{ route('logocer.create') }}" class="btn btn-success">
+                       เพิ่มโลโก้การรับรอง
                     </a>
                 </div>
               <div class="card-body">
@@ -82,7 +82,7 @@
                             @endif
                         </td>
                         <td>
-                            <a href="{{ url('/admin/logoslide/' . $items->id . '/edit') }}" class="btnx editmdi btn-edit"><i class="mdi mdi-brush"></i></a>
+                            <a href="{{ url('/admin/logocer/' . $items->id . '/edit') }}" class="btnx editmdi btn-edit"><i class="mdi mdi-brush"></i></a>
 
                             <button type="button" class="btnx delmdi btn-delete" id="dele" onclick="del({{$items->id}});"><i class="mdi mdi-backspace"></i></button>
                         </td>
@@ -143,7 +143,7 @@ function deleteConf(id) {
                             data:{
                                 '_token': "{{ csrf_token() }}",
                                 id:id},
-                            url: '/admin/logoslide/' + id,
+                            url: '/admin/logocer/' + id,
                             success: function(datas){
 
                                 location.reload();
@@ -182,7 +182,7 @@ function deleteConf(id) {
                     data:{
                         '_token': "{{ csrf_token() }}",
                         images_logo:image_logo,images_shotcut:image_shotcut,images_fut:image_fut},
-                    url: '/admin/logoweb/'+ id,
+                    url: '/admin/logocer/'+ id,
 
                     success: function(datas){
 

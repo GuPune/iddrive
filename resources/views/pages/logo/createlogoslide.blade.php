@@ -87,11 +87,7 @@
 /// check ค่าว่าง
 if(valform === true){
 
-}else {
-
-
-}
-        $.ajaxSetup({
+    $.ajaxSetup({
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     }
@@ -117,6 +113,12 @@ if(valform === true){
 
                     }
                 })
+
+}else {
+
+
+}
+
 });
 
 

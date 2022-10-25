@@ -34,11 +34,11 @@
           <ul class="nav flex-column sub-menu">
             <li class="nav-item"> <a class="nav-link" href="/admin/logoweb">โลโก้เว็บไซค์</a></li>
             <li class="nav-item"> <a class="nav-link" href="/admin/logoslide">ภาพสไลค์</a></li>
-            <li class="nav-item"> <a class="nav-link" href="/admin/logoweb">โลโก้แบรนด์</a></li>
-            <li class="nav-item"> <a class="nav-link" href="/admin/logoweb">ภาพสไลค์(เกี่ยวกับองค์กร)</a></li>
-            <li class="nav-item"> <a class="nav-link" href="/admin/logoweb">โลโก้ลูกค้าของเรา</a></li>
-            <li class="nav-item"> <a class="nav-link" href="/admin/logoweb">โลโก้การรับรอง</a></li>
-            <li class="nav-item"> <a class="nav-link" href="/admin/logoweb">โลโก้ธุรกิจของเรา</a></li>
+            <li class="nav-item"> <a class="nav-link" href="/admin/logobrand">โลโก้แบรนด์</a></li>
+            <li class="nav-item"> <a class="nav-link" href="/admin/logoabout">ภาพสไลค์(เกี่ยวกับองค์กร)</a></li>
+            <li class="nav-item"> <a class="nav-link" href="/admin/logocustomer">โลโก้ลูกค้าของเรา</a></li>
+            <li class="nav-item"> <a class="nav-link" href="/admin/logocer">โลโก้การรับรอง</a></li>
+            <li class="nav-item"> <a class="nav-link" href="/admin/logobussines">โลโก้ธุรกิจของเรา</a></li>
           </ul>
         </div>
       </li>

@@ -8,7 +8,7 @@
     <div class="col-md-12 grid-margin stretch-card">
       <div class="card">
         <div class="card-body">
-          <h4 class="card-title">เพิ่ม ภาพสไลด์</h4>
+          <h4 class="card-title">แก้ไข โลโก้ลูกค้า</h4>
             <div class="form-group">
                 <input type="hidden" class="form-control" name="id" id="id" value="{{$data->id}}">
 
@@ -103,14 +103,14 @@ if(valform === true){
                     data:{
                         '_token': "{{ csrf_token() }}",
                         url:url,title_th:title_th,detais:detais,images_slide:images_slide,status:status},
-                    url: '/admin/logoslide/' + id,
+                    url: '/admin/logocustomer/' + id,
 
                     success: function(datas){
 
                         swal("บันทึกสำเร็จ!", "บันทึกสำเร็จ!", "success");
 
 setTimeout(function(){
-    window.location.href = '/admin/logoslide'
+    window.location.href = '/admin/logocustomer'
 }, 2000);
 
 

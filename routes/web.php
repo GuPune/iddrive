@@ -50,7 +50,7 @@ Route::prefix('admin')->group(function () {
     Route::resource('logoweb', '\App\Http\Controllers\LogowebController');
     Route::resource('logoslide', '\App\Http\Controllers\ImageslideController');
     Route::resource('logobrand', '\App\Http\Controllers\LogobrandController');
-    Route::resource('logoslidebrand', '\App\Http\Controllers\ImageslideaboutControlleController');
+    Route::resource('logoabout', '\App\Http\Controllers\ImageslideaboutController');
     Route::resource('logocustomer', '\App\Http\Controllers\LogocustomerController');
     Route::resource('logocer', '\App\Http\Controllers\LogocerController');
     Route::resource('logobussines', '\App\Http\Controllers\LogobussinesController');

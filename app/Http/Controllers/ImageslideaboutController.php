@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\SlideImage;
 use Illuminate\Http\Request;
 
 class ImageslideaboutController extends Controller
@@ -14,7 +15,8 @@ class ImageslideaboutController extends Controller
     public function index()
     {
         //
-        return view('pages.bussines.index');
+        $data = SlideImage::where('slide_type','3')->get();
+        return view('pages.logo/logoabout.logoslide')->with('data',$data);
     }
 
     /**
@@ -25,6 +27,7 @@ class ImageslideaboutController extends Controller
     public function create()
     {
         //
+        return view('pages.logo/logoabout.create');
     }
 
     /**
@@ -36,6 +39,22 @@ class ImageslideaboutController extends Controller
     public function store(Request $request)
     {
         //
+
+        $inse = SlideImage::create([
+            'slide_topic' => $request->title_th,
+            'slide_type' => 3,
+            'slide_detail' => $request->detais,
+            'slide_path' => $request->images_slide,
+            'status' => 'Y',
+            'slide_url' => $request->url,
+
+        ]);
+
+
+                return response()->json([
+                    'msg_return' => 'บันทึกสำเร็จ',
+                    'code_return' => 1,
+                ]);
     }
 
     /**
@@ -58,6 +77,10 @@ class ImageslideaboutController extends Controller
     public function edit($id)
     {
         //
+        $data = SlideImage::where('slide_type','3')->where('id',$id)->first();
+
+
+        return view('pages.logo/logoabout.edit')->with('data',$data);
     }
 
     /**
@@ -70,6 +93,19 @@ class ImageslideaboutController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $updatecontent = SlideImage::where('id',$id)->update([
+            'slide_topic' => $request->title_th,
+            'slide_detail' => $request->detais,
+            'slide_path' => $request->images_slide,
+            'status' => $request->status,
+            'slide_url' => $request->url,
+        ]);
+
+
+                return response()->json([
+                    'msg_return' => 'บันทึกสำเร็จ',
+                    'code_return' => 1,
+                ]);
     }
 
     /**
@@ -81,5 +117,12 @@ class ImageslideaboutController extends Controller
     public function destroy($id)
     {
         //
+        $delside = SlideImage::where('id',$id)->delete();
+
+
+        return response()->json([
+            'msg_return' => 'บันทึกสำเร็จ',
+            'code_return' => 1,
+        ]);
     }
 }

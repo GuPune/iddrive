@@ -81,6 +81,11 @@ $inse = SlideImage::create([
     public function edit($id)
     {
         //
+
+        $data = SlideImage::where('slide_type','1')->where('id',$id)->first();
+
+
+        return view('pages.logo.editlogoslide')->with('data',$data);
     }
 
     /**
@@ -92,7 +97,21 @@ $inse = SlideImage::create([
      */
     public function update(Request $request, $id)
     {
-        //
+
+
+$updatecontent = SlideImage::where('id',$id)->update([
+    'slide_topic' => $request->title_th,
+    'slide_detail' => $request->detais,
+    'slide_path' => $request->images_slide,
+    'status' => $request->status,
+    'slide_url' => $request->url,
+]);
+
+
+        return response()->json([
+            'msg_return' => 'บันทึกสำเร็จ',
+            'code_return' => 1,
+        ]);
     }
 
     /**
@@ -104,6 +123,13 @@ $inse = SlideImage::create([
     public function destroy($id)
     {
         //
-        \Log::info($id);
+
+        $delside = SlideImage::where('id',$id)->delete();
+
+
+        return response()->json([
+            'msg_return' => 'บันทึกสำเร็จ',
+            'code_return' => 1,
+        ]);
     }
 }

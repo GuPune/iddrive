@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\SlideImage;
 use Illuminate\Http\Request;
 
 class LogocustomerController extends Controller
@@ -14,6 +15,9 @@ class LogocustomerController extends Controller
     public function index()
     {
         //
+        $data = SlideImage::where('slide_type','4')->get();
+
+        return view('pages.logo/logocustomer.logoslide')->with('data',$data);
     }
 
     /**
@@ -24,6 +28,7 @@ class LogocustomerController extends Controller
     public function create()
     {
         //
+        return view('pages.logo/logocustomer.create');
     }
 
     /**
@@ -35,7 +40,24 @@ class LogocustomerController extends Controller
     public function store(Request $request)
     {
         //
+        $inse = SlideImage::create([
+            'slide_topic' => $request->title_th,
+            'slide_type' => 4,
+            'slide_detail' => $request->detais,
+            'slide_path' => $request->images_slide,
+            'status' => 'Y',
+            'slide_url' => $request->url,
+
+        ]);
+
+
+                return response()->json([
+                    'msg_return' => 'บันทึกสำเร็จ',
+                    'code_return' => 1,
+                ]);
+
     }
+
 
     /**
      * Display the specified resource.
@@ -57,6 +79,10 @@ class LogocustomerController extends Controller
     public function edit($id)
     {
         //
+        $data = SlideImage::where('slide_type','4')->where('id',$id)->first();
+
+
+        return view('pages.logo/logocustomer.edit')->with('data',$data);
     }
 
     /**
@@ -68,7 +94,19 @@ class LogocustomerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $updatecontent = SlideImage::where('id',$id)->update([
+            'slide_topic' => $request->title_th,
+            'slide_detail' => $request->detais,
+            'slide_path' => $request->images_slide,
+            'status' => $request->status,
+            'slide_url' => $request->url,
+        ]);
+
+
+                return response()->json([
+                    'msg_return' => 'บันทึกสำเร็จ',
+                    'code_return' => 1,
+                ]);
     }
 
     /**
@@ -80,5 +118,13 @@ class LogocustomerController extends Controller
     public function destroy($id)
     {
         //
+
+        $delside = SlideImage::where('id',$id)->delete();
+
+
+        return response()->json([
+            'msg_return' => 'บันทึกสำเร็จ',
+            'code_return' => 1,
+        ]);
     }
 }

@@ -8,27 +8,23 @@
     <div class="col-md-12 grid-margin stretch-card">
       <div class="card">
         <div class="card-body">
-          <h4 class="card-title">เพิ่ม ภาพสไลด์</h4>
+          <h4 class="card-title">เพิ่ม โลโก้การรับรอง</h4>
             <div class="form-group">
-                <input type="hidden" class="form-control" name="id" id="id" value="{{$data->id}}">
-
                 <input type="hidden" id="_token" value="{{ csrf_token() }}">
               <label for="exampleInputUsername1">หัวข้อ / ชื่อเรื่อง </label><label  style="color:red;"> * </label>
-              <input type="text" class="form-control" id="title_th" placeholder="ใส่ภาษาไทย" value="{{$data->slide_topic}}">
+              <input type="text" class="form-control" id="title_th" placeholder="ใส่ภาษาไทย">
               <div class="help-block-name help-block-title_th">กรุณากรอกชื่อเรื่อง</div>
             </div>
-
-
             <div class="form-group">
                 <label for="exampleInputUsername1">รายละเอียด</label><label  style="color:red;"> * </label>
-                <input type="text" class="form-control" id="detais" placeholder="ใส่ภาษาอังกฤษ" value="{{$data->slide_detail}}">
+                <input type="text" class="form-control" id="detais" placeholder="ใส่ภาษาอังกฤษ">
                 <div class="help-block-name help-block-detais">กรุณากรอกรายละเอียด</div>
             </div>
 
 
               <div class="form-group">
                 <label for="exampleInputUsername1">URL</label>
-                <input type="text" class="form-control" id="url" placeholder="Url" value="{{$data->slide_url}}">
+                <input type="text" class="form-control" id="url" placeholder="Url">
                 <div class="help-block-name help-block-url">กรุณากรอก URL</div>
               </div>
 
@@ -36,8 +32,8 @@
               <div class="form-group">
                 <label for="exampleInputUsername1">Upload รูปภาพ</label>
                 <input type="file" name="image_slide" id="image_slide" ><br>
-                <input type="text" class="form-control" name="images_slide" id="images_slide" value="{{$data->slide_path}}">
-                <img src="/public/product/{{$data->slide_path}}" alt="รูปภาพสไลด์" class="img-fluid rounded mx-auto d-block profile-image" id="showImageslide" width="300" height="150">
+                <input type="hidden" class="form-control" name="images_slide" id="images_slide">
+                <img src="/img/no_photo.jpg" alt="รูปภาพสไลด์" class="img-fluid rounded mx-auto d-block profile-image" id="showImageslide" width="300" height="150">
               </div>
 
 
@@ -47,8 +43,8 @@
               <div class="form-group">
                 <label for="exampleInputUsername1">สถานะ </label>
                 <select class="form-control" id="status">
-                    <option value="Y" @if($data->status == 'Y'){{'selected'}}@endif>Active</option>
-                    <option value="N" @if($data->status == 'N'){{'selected'}}@endif>Isactive</option>
+                    <option value="Y">Active</option>
+                    <option value="N">Isactive</option>
                   </select>
               </div>
             <button type="button" class="btn btn-info btn-lg btn-block btn-save">Save
@@ -99,20 +95,19 @@ if(valform === true){
 
                 $.ajax({
                     dataType: 'json',
-                    type:'PUT',
+                    type:'POST',
                     data:{
                         '_token': "{{ csrf_token() }}",
                         url:url,title_th:title_th,detais:detais,images_slide:images_slide,status:status},
-                    url: '/admin/logoslide/' + id,
+                    url: '/admin/logocer',
 
                     success: function(datas){
 
                         swal("บันทึกสำเร็จ!", "บันทึกสำเร็จ!", "success");
 
-setTimeout(function(){
-    window.location.href = '/admin/logoslide'
+                        setTimeout(function(){
+                            window.location.href = '/admin/logocer'
 }, 2000);
-
 
 
 
