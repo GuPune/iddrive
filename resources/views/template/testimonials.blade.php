@@ -20,10 +20,9 @@
     <div class="testimonial-wrap">
         <div class="card">
             @php
-                        $link = env('APP_URL');
+      $link = env('APP_URL');
       $fineUrlImg = $link . "/export/new/" . $datas->n_code;
-    $imga = \App\CoreFunction\Cutstr::findimgInhtml($fineUrlImg) != NULL  ? \App\CoreFunction\Cutstr::findimgInhtml($fineUrlImg) : $link . "/img/no_photo.jpg";
-
+      $imga = \App\CoreFunction\Cutstr::findimgInhtml($fineUrlImg) != NULL  ? \App\CoreFunction\Cutstr::findimgInhtml($fineUrlImg) : $link . "/img/no_photo.jpg";
 @endphp
             <img src="{{$imga}}"  class="img-responsive" alt="Images" style="width: 100%; height:250px">
             <div class="card-body">
@@ -38,14 +37,11 @@
   </div><!-- End testimonial item -->
 
 @endforeach
-
-
-
         </div>
         <div class="swiper-pagination"></div>
       </div>
       <div align="center" style="padding: 20px;color:white">
-        <a href="#" class="btn btn-large btn-danger"> ข่าวสารทั้งหมด </a>
+        <a href="/new" class="btn btn-large btn-danger"> ข่าวสารทั้งหมด </a>
     </div>
     </div>
 

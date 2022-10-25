@@ -7,6 +7,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\ExportHtmlNewController;
 use App\Http\Controllers\MultiController;
+use App\Http\Controllers\FrontNewController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,7 +27,7 @@ Route::get('/', function () {
 
 Route::get('/admin/login', [LoginController::class, 'showAdminLoginForm']);
 Route::post('/login', [LoginController::class,'login'])->name('login');
-
+Route::get('/new', [FrontNewController::class, 'index'])->name('new');
 
 // Route::prefix('admin')->namespace('Admin')->middleware(['auth'])->group(function () {
 //     //

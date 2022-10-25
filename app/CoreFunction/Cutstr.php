@@ -94,7 +94,7 @@ class Cutstr extends Model
 
     public static function getnew()
     {
-        $data = NewContent::where('status','Y')->where('type','1')->get();
+        $data = NewContent::where('status','Y')->where('type','1')->orderBy("id", "desc")->get();
 
         return $data;
     }
@@ -116,6 +116,18 @@ class Cutstr extends Model
     {
         $data = ConfigImage::where('id','1')->first();
         return $data;
+    }
+
+    public static function gettype($type)
+    {
+
+        if($type == '1'){
+            return 'news';
+        }else if($type == '2'){
+            return 'bussines';
+        }else {
+            return 'product';
+        }
     }
 
 
