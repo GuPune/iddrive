@@ -111,6 +111,13 @@ class Cutstr extends Model
     }
 
 
+    public static function getconfig()
+    {
+        $data = ConfigImage::where('id','1')->first();
+        return $data;
+    }
+
+
 
 
 
