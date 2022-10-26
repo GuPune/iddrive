@@ -8,9 +8,12 @@ use App;
 use App\Models\Branch;
 use App\Models\ConfigImage;
 use App\Models\NewContent;
+use App\Models\SlideImage;
+
 use DB;
 use DOMDocument;
 use Log;
+
 
 
 
@@ -101,13 +104,13 @@ class Cutstr extends Model
 
     public static function getbussines()
     {
-        $data = NewContent::where('status','Y')->where('type','2')->get();
+        $data = NewContent::where('status','Y')->where('type','2')->orderBy("id", "desc")->get();
         return $data;
     }
 
     public static function getproduct()
     {
-        $data = NewContent::where('status','Y')->where('type','3')->get();
+        $data = NewContent::where('status','Y')->where('type','3')->orderBy("id", "desc")->get();
         return $data;
     }
 
@@ -120,14 +123,42 @@ class Cutstr extends Model
 
     public static function gettype($type)
     {
-
         if($type == '1'){
-            return 'news';
+            return 'new';
         }else if($type == '2'){
             return 'bussines';
         }else {
             return 'product';
         }
+    }
+
+    public static function customer()
+    {
+        $data = SlideImage::where('status','Y')->where('slide_type','4')->orderBy("id", "desc")->get();
+        return $data;
+    }
+
+    public static function cr()
+    {
+        $data = SlideImage::where('status','Y')->where('slide_type','5')->orderBy("id", "desc")->get();
+        return $data;
+    }
+
+    public static function brand()
+    {
+        $data = SlideImage::where('status','Y')->where('slide_type','2')->orderBy("id", "desc")->get();
+        return $data;
+    }
+
+    public static function updateview($id)
+    {
+
+
+
+
+        NewContent::find($id)->increment('view', 1); // +10
+
+
     }
 
 

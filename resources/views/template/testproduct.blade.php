@@ -21,15 +21,15 @@
     $imga = \App\CoreFunction\Cutstr::findimgInhtml($fineUrlImg) != NULL  ? \App\CoreFunction\Cutstr::findimgInhtml($fineUrlImg) : $link . "/img/no_photo.jpg";
 
 @endphp
-                       <a href="https://www.workbythai.com/blocks_in_page/184/เวิร์คบายไทย">
+                       <a href="#">
                         <img data-original="{{$imga}}" alt="ภาพข่าวกิจกรรม" class="lazy"  src="{{$imga}}" style="display: inline;width: 100%; height:250px;">
                     </a>
                      </div>
                      <div class="service-header">
-                        <h5 class="card-title">{{$datas->title}}</h5>
+                        <h5 class="card-title">{{$datas->title_th}}</h5>
                      </div>
                      <div class="service-desc">
-                        {{$datas->name}}
+                        {{$datas->name_th}}
                      </div>
                    </div>
                    <!-- Latest work ITEM End -->
@@ -42,7 +42,7 @@
          </div>
 
       <div align="center" style="padding: 20px;color:white">
-        <a href="#" class="btn btn-large btn-danger"> สินค้าและบริการทั้งหมด </a>
+        <a href="/product" class="btn btn-large btn-danger"> สินค้าและบริการทั้งหมด </a>
     </div>
 
     </div>

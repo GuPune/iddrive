@@ -8,8 +8,8 @@
     <div class="container">
 
       <ol>
-        <li><a href="/">หน้าหลัก</a></li>
-        <li>สินค้าและบริการ</li>
+        <li><a href="index.html">หน้าหลัก</a></li>
+        <li>ธุรกิจของเรา</li>
       </ol>
 
     </div>
@@ -53,8 +53,7 @@ $datas = \App\CoreFunction\Cutstr::findimgInhtml($fineUrlImg) != NULL  ? \App\Co
                 {{$items->name_th}}
               </p>
               <div class="read-more">
-
-                <a href="{{ url('/product/' . $items->id) }}">อ่านเพิ่มเติม</a>
+                <a href="new/{{$items->id}}">Read More</a>
               </div>
             </div>
 
@@ -64,13 +63,13 @@ $datas = \App\CoreFunction\Cutstr::findimgInhtml($fineUrlImg) != NULL  ? \App\Co
 
 
 
-          {{-- <div class="blog-pagination">
+          <div class="blog-pagination">
             <ul class="justify-content-center">
               <li><a href="#">1</a></li>
               <li class="active"><a href="#">2</a></li>
               <li><a href="#">3</a></li>
             </ul>
-          </div> --}}
+          </div>
 
         </div><!-- End blog entries list -->
 
@@ -91,14 +90,14 @@ $x = \App\CoreFunction\Cutstr::findimgInhtml($fineUrlImg) != NULL  ? \App\CoreFu
 $gettype = \App\CoreFunction\Cutstr::gettype($lastnews->type);
 @endphp
                 <img src="<?= $x ?>" alt="">
-                <h4><a href="{{ url($gettype.'/' . $lastnews->id) }}" >{{$lastnews->title_th}}</a></h4>
+                <h4><a href="{{$gettype}}/{{$lastnews->id}}">{{$lastnews->title_th}}</a></h4>
                 <time datetime="2020-01-01">{{ $diff = Carbon\Carbon::parse($lastnews->created_at)->format('H:i:s d-m-Y ')}}</time>
               </div>
               @endforeach
 
 
             </div><!-- End sidebar recent posts-->
-{{--
+
             <h3 class="sidebar-title">Tags</h3>
             <div class="sidebar-item tags">
               <ul>
@@ -114,9 +113,7 @@ $gettype = \App\CoreFunction\Cutstr::gettype($lastnews->type);
                 <li><a href="#">Tips</a></li>
                 <li><a href="#">Marketing</a></li>
               </ul>
-            </div> --}}
-
-            <!-- End sidebar tags-->
+            </div><!-- End sidebar tags-->
 
           </div><!-- End sidebar -->
 

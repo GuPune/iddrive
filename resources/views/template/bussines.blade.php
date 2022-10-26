@@ -3,7 +3,7 @@
 @endphp
 
 
-<section id="testproduct" class="testimonials section section-diff section-bg-1">
+<section id="bussines" class="testimonials section section-diff section-bg-1">
     <div class="container" data-aos="fade-up">
       <div class="section-title">
         <h2>ธุรกิจของเรา</h2>
@@ -12,7 +12,7 @@
 
       <div class="row bottom-gap">
         @foreach($data as $datas)
-        <div class="col-sm-4">
+        <div class="col-sm-3">
                    <!-- Latest work ITEM -->
                    <div class="service fadeLeft" style="opacity: 1; left: 0px;">
                      <div class="service-icon m-t-n">
@@ -22,15 +22,15 @@
     $imga = \App\CoreFunction\Cutstr::findimgInhtml($fineUrlImg) != NULL  ? \App\CoreFunction\Cutstr::findimgInhtml($fineUrlImg) : $link . "/img/no_photo.jpg";
 
 @endphp
-                       <a href="#">
+                       <a href="{{$datas->url}}"  target="_blank">
                         <img data-original="{{$imga}}" alt="ภาพข่าวกิจกรรม" class="lazy" src="{{$imga}}" style="display: inline;width: 100%; height:250px;">
                     </a>
                      </div>
                      <div class="service-header">
-                        <h5 class="card-title">{{$datas->title}}</h5>
+                        <h5 class="card-title">{{$datas->title_th}}</h5>
                      </div>
                      <div class="service-desc">
-                        {{$datas->name}}
+                        {{$datas->name_th}}
                              <br><font size="2px;" class="pull-right">{{$datas->create_at}}</font>
                      </div>
                    </div>
@@ -40,9 +40,7 @@
 
          </div>
 
-      <div align="center" style="padding: 20px;color:white">
-        <a href="#" class="btn btn-large btn-danger"> สินค้าและบริการทั้งหมด </a>
-    </div>
+
 
     </div>
 

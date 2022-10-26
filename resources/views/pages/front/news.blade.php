@@ -8,7 +8,7 @@
     <div class="container">
 
       <ol>
-        <li><a href="index.html">หน้าหลัก</a></li>
+        <li><a href="/">หน้าหลัก</a></li>
         <li>ข่าวสารและกิจกรรม</li>
       </ol>
 
@@ -39,7 +39,7 @@ $datas = \App\CoreFunction\Cutstr::findimgInhtml($fineUrlImg) != NULL  ? \App\Co
               <img src="<?= $datas ?>" alt="" class="img-fluid">
             </div>
             <h2 class="entry-title">
-              <a href="new/{{$items->id}}">{{$items->title_th}}</a>
+              <a href="{{ url('/new' . $items->id . '/edit') }}">{{$items->title_th}}</a>
             </h2>
             <div class="entry-meta">
               <ul>
@@ -53,7 +53,7 @@ $datas = \App\CoreFunction\Cutstr::findimgInhtml($fineUrlImg) != NULL  ? \App\Co
                 {{$items->name_th}}
               </p>
               <div class="read-more">
-                <a href="new/{{$items->id}}">Read More</a>
+                <a href="{{ url('/new/' . $items->id) }}">อ่านเพิ่มเติม</a>
               </div>
             </div>
 
@@ -62,14 +62,14 @@ $datas = \App\CoreFunction\Cutstr::findimgInhtml($fineUrlImg) != NULL  ? \App\Co
           @endforeach
 
 
-
+{{--
           <div class="blog-pagination">
             <ul class="justify-content-center">
               <li><a href="#">1</a></li>
               <li class="active"><a href="#">2</a></li>
               <li><a href="#">3</a></li>
             </ul>
-          </div>
+          </div> --}}
 
         </div><!-- End blog entries list -->
 
@@ -98,7 +98,7 @@ $gettype = \App\CoreFunction\Cutstr::gettype($lastnews->type);
 
             </div><!-- End sidebar recent posts-->
 
-            <h3 class="sidebar-title">Tags</h3>
+            {{-- <h3 class="sidebar-title">Tags</h3>
             <div class="sidebar-item tags">
               <ul>
                 <li><a href="#">App</a></li>
@@ -113,7 +113,9 @@ $gettype = \App\CoreFunction\Cutstr::gettype($lastnews->type);
                 <li><a href="#">Tips</a></li>
                 <li><a href="#">Marketing</a></li>
               </ul>
-            </div><!-- End sidebar tags-->
+            </div> --}}
+
+            <!-- End sidebar tags-->
 
           </div><!-- End sidebar -->
 

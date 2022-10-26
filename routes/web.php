@@ -8,6 +8,7 @@ use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\ExportHtmlNewController;
 use App\Http\Controllers\MultiController;
 use App\Http\Controllers\FrontNewController;
+use App\Http\Controllers\FrontProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,7 +29,9 @@ Route::get('/', function () {
 Route::get('/admin/login', [LoginController::class, 'showAdminLoginForm']);
 Route::post('/login', [LoginController::class,'login'])->name('login');
 Route::get('/new', [FrontNewController::class, 'index'])->name('new');
+Route::get('/new/{id}', [FrontNewController::class, 'show'])->name('new.show');
 Route::get('/product', [FrontProductController::class, 'index'])->name('product');
+Route::get('/product/{id}', [FrontProductController::class, 'show'])->name('product.show');
 Route::get('/bussines', [FrontBussinessController::class, 'index'])->name('bussines');
 
 // Route::prefix('admin')->namespace('Admin')->middleware(['auth'])->group(function () {

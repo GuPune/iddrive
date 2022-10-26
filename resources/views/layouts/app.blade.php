@@ -107,6 +107,61 @@
     background: url(//www.workbythai.com/assets/images/coding.jpg);
     background-size: cover;
 }
+
+#hero1 {
+    width: 100%;
+    height: 100vh;
+    background: url("https://i.imgur.com/3BgTF6X.jpg") top center no-repeat;
+    background-size: cover;
+    position: relative;
+    padding-top: 82px;
+}
+
+/* #hero1:before {
+    content: "";
+    background: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+} */
+
+#hero1 h1 {
+    margin: 0;
+    font-size: 48px;
+    font-weight: 700;
+    color: #fff;
+}
+
+#hero1 h2 {
+    color: #fff;
+    margin: 10px 0 0 0;
+    font-size: 24px;
+}
+
+#hero1 .btn-get-started {
+    font-family: "Raleway", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 10px 30px;
+    border-radius: 4px;
+    transition: 0.5s;
+    margin-top: 30px;
+    color: #fff;
+    background: #e03a3c;
+    border: 2px solid #e03a3c;
+}
+
+@media (max-height: 500px) {
+
+    #hero1 {
+    height: 120vh;
+}
+}
+
     </style>
 </head>
 
@@ -116,14 +171,13 @@
   @include('template.header')
 
   <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex align-items-center">
-
+  <section id="hero1" class="d-flex align-items-center" style="background-image: url('https://i.imgur.com/3BgTF6X.jpg') top center no-repeat">
     <div class="container" data-aos="zoom-out" data-aos-delay="100">
       <div class="row">
         <div class="col-xl-6">
-          <h1>Bettter digital experience with Presento</h1>
+          {{-- <h1>Bettter digital experience with Presento</h1>
           <h2>We are team of talented designers making websites with Bootstrap</h2>
-          <a href="#about" class="btn-get-started scrollto">Get Started</a>
+          <a href="#about" class="btn-get-started scrollto">Get Started</a> --}}
         </div>
       </div>
     </div>
@@ -132,37 +186,47 @@
 
   <main id="main">
     @include('template.brand')
+
+
     <!-- ======= Clients Section ======= -->
 
 
     <!-- ======= About Section ======= -->
-    @include('template.about')
+    {{-- @include('template.about') --}}
     <!-- ======= Counts Section ======= -->
-    @include('template.count')
+    {{-- @include('template.count') --}}
 
     <!-- ======= Tabs Section ======= -->
-    @include('template.tab')
+    {{-- @include('template.tab') --}}
 
     <!-- ======= Services Section ======= -->
-    @include('template.service')
+    {{-- @include('template.service') --}}
 
     <!-- ======= Portfolio Section ======= -->
-    @include('template.portfolio')
+    {{-- @include('template.portfolio') --}}
 
-    <!-- ======= Testimonials Section ======= -->
-    @include('template.testimonials')
+
 
         <!-- ======= Product Section ======= -->
         @include('template.testproduct')
+
+
+            <!-- ======= Testimonials Section ======= -->
+    @include('template.testimonials')
 
  <!-- ======= Product Section ======= -->
       @include('template.bussines')
 
     <!-- ======= Pricing Section ======= -->
-    @include('template.pricing')
+    {{-- @include('template.pricing') --}}
 
     <!-- ======= Frequently Asked Questions Section ======= -->
-    @include('template.faq')
+    {{-- @include('template.faq') --}}
+
+        @include('template.portfolio')
+    @include('template.crv')
+
+
 
 
     <!-- ======= Team Section ======= -->
