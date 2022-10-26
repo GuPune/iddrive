@@ -1,4 +1,14 @@
-<header id="header" class="fixed-top d-flex align-items-center">
+<style>
+
+
+    .bga{
+        opacity: 1!important;
+        filter: none!important;
+        background: #f47e2b!important;
+
+    }
+    </style>
+<header id="header" class="fixed-top d-flex align-items-center bga">
     <div class="container d-flex align-items-center">
       <h1 class="logo me-auto">
         @php
