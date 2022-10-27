@@ -9,6 +9,7 @@ use App\Http\Controllers\ExportHtmlNewController;
 use App\Http\Controllers\MultiController;
 use App\Http\Controllers\FrontNewController;
 use App\Http\Controllers\FrontProductController;
+use App\Http\Controllers\CaptchaServiceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,6 +49,7 @@ Route::prefix('admin')->group(function () {
     Route::resource('new', '\App\Http\Controllers\NewController');
     Route::resource('product', '\App\Http\Controllers\ProductController');
     Route::resource('bussines', '\App\Http\Controllers\BussinesController');
+    Route::resource('contact', '\App\Http\Controllers\ContactController');
 
     Route::resource('new-setting', '\App\Http\Controllers\NewSettingController');
     Route::resource('product-setting', '\App\Http\Controllers\ProductSettingController');

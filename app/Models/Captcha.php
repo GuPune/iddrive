@@ -5,19 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Contact extends Model
+class Captcha extends Model
 {
     use HasFactory;
 
 
-    protected $table = 'contact';
+    protected $table = 'captcha';
 
     protected $fillable = [
         'id',
-        'name',
-        'tel',
-        'email',
+        'ask',
+        'answer',
         'status',
-        'message'
+
     ];
 }

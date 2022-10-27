@@ -92,6 +92,21 @@
 
 
       <li class="nav-item">
+        <a class="nav-link" data-toggle="collapse" href="#form-contact" aria-expanded="false" aria-controls="form-contact">
+         <i class="typcn typcn-th-small-outline menu-icon"></i>
+          <span class="menu-title">ติดต่อ</span>
+          <i class="menu-arrow"></i>
+        </a>
+
+        <div class="collapse" id="form-contact">
+            <ul class="nav flex-column sub-menu">
+              <li class="nav-item"> <a class="nav-link" href="/admin/contact">ข้อมูลติดต่อ</a></li>
+
+            </ul>
+          </div>
+      </li>
+
+      <li class="nav-item">
         <a class="nav-link" data-toggle="collapse" href="#form-multi" aria-expanded="false" aria-controls="form-multi">
             <i class="typcn typcn-globe-outline menu-icon"></i>
           <span class="menu-title">ตั้งค่าภาษา </span>

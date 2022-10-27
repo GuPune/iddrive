@@ -6,6 +6,7 @@ namespace App\CoreFunction;
 use Illuminate\Database\Eloquent\Model;
 use App;
 use App\Models\Branch;
+use App\Models\Captcha;
 use App\Models\ConfigImage;
 use App\Models\NewContent;
 use App\Models\SlideImage;
@@ -160,6 +161,20 @@ class Cutstr extends Model
 
 
     }
+
+
+
+    public static function ask()
+    {
+
+
+        $ran = Captcha::all()->random(1)->first();
+
+       return $ran;
+
+
+    }
+
 
 
 
