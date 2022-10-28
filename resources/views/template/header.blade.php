@@ -114,16 +114,29 @@ $me = \App\CoreFunction\Cutstr::menufr($st);
 
             @endforeach
 
+
+            <li>
+                <a  href="{{ url('lang/en') }}">
+                    <img src="assets/img/en.jpg" title="English">
+                </a>
+
+        </li>
+        <li>
+            <a style="padding-left: 5px;padding-right:5px;" href="{{ url('lang/th') }}">
+                <img src="assets/img/thai.jpg" title="Thai">
+                </a>
+
+    </li>
+    <li>
+        <a style="padding-left: 5px;padding-right:5px;" href="{{ url('lang/cn') }}">
+            <img src="assets/img/thai.jpg" title="Thai">
+            </a>
+
+</li>
+
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
-      <div class="pull-right">
-        <a style="padding-left: 5px;padding-right:5px;" href="{{ url('lang/en') }}">
-            <img src="assets/img/en.jpg" title="English">
-        </a>
-        <a href="{{ url('lang/th') }}">
-        <img src="assets/img/thai.jpg" title="Thai">
-        </a>
-        </div>
+
     </div>
   </header><!-- End Header -->
