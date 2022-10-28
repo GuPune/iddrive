@@ -19,6 +19,7 @@ class System extends Model
         'system_menu',
         'link',
         'system_encodeid',
+        'type',
     ];
 }
 

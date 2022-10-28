@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\NewContent;
 use Illuminate\Http\Request;
 use App\CoreFunction;
+use App;
+use Illuminate\Support\Facades\App as FacadesApp;
 
 class FrontNewController extends Controller
 {
@@ -49,5 +51,19 @@ dd('edit');
 
 
 
+    }
+
+    public function lang($locale)
+    {
+
+     //   App::setLocale($locale);
+
+        session()->put('locale', $locale);
+
+        if (session()->has('locale')) {
+            FacadesApp::setLocale(session()->get('locale'));
+        }
+
+        return redirect()->back();
     }
 }

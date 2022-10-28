@@ -15,6 +15,10 @@
 $imga = \App\CoreFunction\Cutstr::getconfig();
 
 $locale = \App\CoreFunction\Cutstr::language();
+$localex = session()->get('locale');
+$st = 'menu';
+$me = \App\CoreFunction\Cutstr::menufr($st);
+
 
 @endphp
 
@@ -26,25 +30,99 @@ $locale = \App\CoreFunction\Cutstr::language();
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-          <li><a class="nav-link scrollto active" href="/">หน้าหลัก</a></li>
-          <li><a class="nav-link scrollto" href="#testproduct">สินค้าและบริการ</a></li>
-          <li><a class="nav-link scrollto" href="#testimonials">ข่าวสารและกิจกรรม</a></li>
-          <li><a class="nav-link scrollto" href="#bussines">ธุรกิจของเรา</a></li>
-          <li><a class="nav-link scrollto " href="#portfolio">เกี่ยวกับเรา</a></li>
-          <li><a class="nav-link scrollto" href="#contact">ติดต่อเรา</a></li>
+            @foreach($me as $k => $mes)
 
-          <li><a class="nav-link scrollto" href="#contact">
+
+
+         @if($mes->system_encodeid == 'A1')
+         <li>
+            <a class="nav-link scrollto active" href="/">
+                @if($localex == 'th')
+                {{$mes->name_th}}
+                @elseif($localex == 'en')
+                {{$mes->name_en}}
+                @else
+                {{$mes->name_cn}}
+                @endif
+
+        </a>
+         </li>
+
+        @elseif($mes->system_encodeid == 'A2')
+        <li>
+            <a class="nav-link scrollto" href="#testproduct">
+                @if($localex == 'th')
+                {{$mes->name_th}}
+                @elseif($localex == 'en')
+                {{$mes->name_en}}
+                @else
+                {{$mes->name_cn}}
+                @endif
+            </a>
+        </li>
+        @elseif($mes->system_encodeid == 'A3')
+        <li>
+            <a class="nav-link scrollto" href="#testimonials">
+                @if($localex == 'th')
+                {{$mes->name_th}}
+                @elseif($localex == 'en')
+                {{$mes->name_en}}
+                @else
+                {{$mes->name_cn}}
+                @endif
+
             </a></li>
+        @elseif($mes->system_encodeid == 'A4')
+        <li><a class="nav-link scrollto" href="#bussines">
+
+            @if($localex == 'th')
+            {{$mes->name_th}}
+            @elseif($localex == 'en')
+            {{$mes->name_en}}
+            @else
+            {{$mes->name_cn}}
+            @endif
+
+        </a></li>
+        @elseif($mes->system_encodeid == 'A5')
+        <li><a class="nav-link scrollto " href="#portfolio">
+            @if($localex == 'th')
+            {{$mes->name_th}}
+            @elseif($localex == 'en')
+            {{$mes->name_en}}
+            @else
+            {{$mes->name_cn}}
+            @endif
+
+        </a></li>
+        @elseif($mes->system_encodeid == 'A6')
+        <li><a class="nav-link scrollto" href="#contact">
+            @if($localex == 'th')
+            {{$mes->name_th}}
+            @elseif($localex == 'en')
+            {{$mes->name_en}}
+            @else
+            {{$mes->name_cn}}
+            @endif
+        </a></li>
+
+
+
+        @endif
+
+
+
+            @endforeach
 
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
       <div class="pull-right">
-        <a style="padding-left: 5px;padding-right:5px;" href="#">
+        <a style="padding-left: 5px;padding-right:5px;" href="{{ url('lang/en') }}">
             <img src="assets/img/en.jpg" title="English">
         </a>
-        <a href="#">
-        <img src="assets/img/thai.jpg" title="English">
+        <a href="{{ url('lang/th') }}">
+        <img src="assets/img/thai.jpg" title="Thai">
         </a>
         </div>
     </div>

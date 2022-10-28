@@ -27,6 +27,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+Route::get('/lang/{locale}', [FrontNewController::class, 'lang'])->name('new.lang');
 Route::get('/admin/login', [LoginController::class, 'showAdminLoginForm']);
 Route::post('/login', [LoginController::class,'login'])->name('login');
 Route::get('/new', [FrontNewController::class, 'index'])->name('new');

@@ -10,7 +10,7 @@ use App\Models\Captcha;
 use App\Models\ConfigImage;
 use App\Models\NewContent;
 use App\Models\SlideImage;
-
+use App\Models\System;
 use DB;
 use DOMDocument;
 use Log;
@@ -185,6 +185,14 @@ class Cutstr extends Model
         }
 
         return $locale;
+    }
+
+
+    public static  function menufr ($me) {
+
+$menu = System::where('type',$me)->get();
+
+return $menu;
     }
 
 
