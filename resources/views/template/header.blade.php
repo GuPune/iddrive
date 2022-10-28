@@ -129,7 +129,7 @@ $me = \App\CoreFunction\Cutstr::menufr($st);
     </li>
     <li>
         <a style="padding-left: 5px;padding-right:5px;" href="{{ url('lang/cn') }}">
-            <img src="assets/img/thai.jpg" title="Thai">
+            <img src="assets/img/cn.png" title="Chaina">
             </a>
 
 </li>
