@@ -1,7 +1,7 @@
 
 
 
-<section id="bussines" class="testimonials section section-diff section-bg-2">
+<section>
 
 
 
