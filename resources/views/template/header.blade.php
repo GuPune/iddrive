@@ -27,9 +27,20 @@ $imga = \App\CoreFunction\Cutstr::getconfig();
           <li><a class="nav-link scrollto" href="#bussines">ธุรกิจของเรา</a></li>
           <li><a class="nav-link scrollto " href="#portfolio">เกี่ยวกับเรา</a></li>
           <li><a class="nav-link scrollto" href="#contact">ติดต่อเรา</a></li>
+
+          <li><a class="nav-link scrollto" href="#contact">
+            </a></li>
+
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
-
+      <div class="pull-right">
+        <a style="padding-left: 5px;padding-right:5px;" href="#">
+            <img src="assets/img/en.jpg" title="English">
+        </a>
+        <a href="#">
+        <img src="assets/img/thai.jpg" title="English">
+        </a>
+        </div>
     </div>
   </header><!-- End Header -->
