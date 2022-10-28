@@ -175,6 +175,18 @@ class Cutstr extends Model
 
     }
 
+    public static  function language () {
+
+        $locale = session()->get('locale');
+        $lean = 'th';
+        if($locale == null){
+        App::setLocale($lean);
+        session()->put('locale', $lean);
+        }
+
+        return $locale;
+    }
+
 
 
 

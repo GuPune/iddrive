@@ -13,7 +13,12 @@
       <h1 class="logo me-auto">
         @php
 $imga = \App\CoreFunction\Cutstr::getconfig();
+
+$locale = \App\CoreFunction\Cutstr::language();
+
 @endphp
+
+
         <img src="/public/product/{{$imga->image_logo}}" alt="logo"/>
     </h1>
       <!-- Uncomment below if you prefer to use an image logo -->
