@@ -108,6 +108,11 @@
     background-size: cover;
 }
 
+.section-bg-2 {
+    background: url(https://iddrives.co.th/web/src/images/web/teamidd2.jpg);
+    background-size: cover;
+}
+
 #hero1 {
     width: 100%;
     height: 100vh;
@@ -234,6 +239,10 @@
 
     <!-- ======= Contact Section ======= -->
     @include('template.contact')
+
+
+
+    @include('template.causo')
 
   </main><!-- End #main -->
 
