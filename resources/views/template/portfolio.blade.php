@@ -1,8 +1,23 @@
 <section id="portfolio" class="portfolio">
+    @php
+
+$localex = session()->get('locale');
+$st = 'B6';
+$loca = \App\CoreFunction\Cutstr::typelan($st);
+
+@endphp
     <div class="container" data-aos="fade-up">
 
       <div class="section-title">
-        <h2>ลูกค้าของเรา</h2>
+        <h2>
+            @if($localex == 'th')
+            {{$loca->name_th}}
+            @elseif($localex == 'en')
+            {{$loca->name_en}}
+            @else
+            {{$loca->name_ch}}
+            @endif
+        </h2>
       </div>
 
 

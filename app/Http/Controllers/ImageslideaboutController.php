@@ -47,6 +47,7 @@ class ImageslideaboutController extends Controller
             'slide_path' => $request->images_slide,
             'status' => 'Y',
             'slide_url' => $request->url,
+            'lang' => $request->lan,
 
         ]);
 
@@ -93,12 +94,14 @@ class ImageslideaboutController extends Controller
     public function update(Request $request, $id)
     {
         //
+
         $updatecontent = SlideImage::where('id',$id)->update([
             'slide_topic' => $request->title_th,
             'slide_detail' => $request->detais,
             'slide_path' => $request->images_slide,
             'status' => $request->status,
             'slide_url' => $request->url,
+            'lang' => $request->lan,
         ]);
 
 

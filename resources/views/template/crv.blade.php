@@ -6,9 +6,25 @@
 
     }
     </style>
+
+@php
+
+$localex = session()->get('locale');
+$st = 'B7';
+$loca = \App\CoreFunction\Cutstr::typelan($st);
+
+@endphp
 <section id="clients" class="clients">
     <div class="section-title">
-        <h2>การรับรอง</h2>
+        <h2>
+            @if($localex == 'th')
+            {{$loca->name_th}}
+            @elseif($localex == 'en')
+            {{$loca->name_en}}
+            @else
+            {{$loca->name_ch}}
+            @endif
+        </h2>
       </div>
       @php
         $crs = \App\CoreFunction\Cutstr::cr();

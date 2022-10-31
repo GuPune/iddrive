@@ -28,7 +28,7 @@
 
               <div class="form-group">
                 <label for="exampleInputUsername1">URL</label>
-                <input type="text" class="form-control" id="url" placeholder="Url" value="{{$data->slide_url}}">
+                <input type="hidden" class="form-control" id="url" placeholder="Url" value="{{$data->slide_url}}">
                 <div class="help-block-name help-block-url">กรุณากรอก URL</div>
               </div>
 
@@ -36,11 +36,9 @@
               <div class="form-group">
                 <label for="exampleInputUsername1">Upload รูปภาพ</label>
                 <input type="file" name="image_slide" id="image_slide" ><br>
-                <input type="text" class="form-control" name="images_slide" id="images_slide" value="{{$data->slide_path}}">
+                <input type="hidden" class="form-control" name="images_slide" id="images_slide" value="{{$data->slide_path}}">
                 <img src="/public/product/{{$data->slide_path}}" alt="รูปภาพสไลด์" class="img-fluid rounded mx-auto d-block profile-image" id="showImageslide" width="300" height="150">
               </div>
-
-
 
 
 
@@ -49,6 +47,15 @@
                 <select class="form-control" id="status">
                     <option value="Y" @if($data->status == 'Y'){{'selected'}}@endif>Active</option>
                     <option value="N" @if($data->status == 'N'){{'selected'}}@endif>Isactive</option>
+                  </select>
+              </div>
+
+              <div class="form-group">
+                <label for="exampleInputUsername1">ภาษา </label>
+                <select class="form-control" id="lan">
+                    <option value="T" @if($data->lang == 'T'){{'selected'}}@endif >ไทย</option>
+                    <option value="E" @if($data->lang == 'E'){{'selected'}} @endif>อังกฤษ</option>
+                    <option value="C" @if($data->lang == 'C'){{'selected'}} @endif >จีน</option>
                   </select>
               </div>
             <button type="button" class="btn btn-info btn-lg btn-block btn-save">Save
@@ -84,7 +91,7 @@
         var detais = $('#detais').val();
         var status = $('#status').val();
         var images_slide = $('#images_slide').val();
-
+        var lan = $('#lan').val();
 
 
         let valform = validateForm();
@@ -102,7 +109,7 @@ if(valform === true){
                     type:'PUT',
                     data:{
                         '_token': "{{ csrf_token() }}",
-                        url:url,title_th:title_th,detais:detais,images_slide:images_slide,status:status},
+                        url:url,title_th:title_th,detais:detais,images_slide:images_slide,status:status,lan:lan},
                     url: '/admin/logoabout/' + id,
 
                     success: function(datas){
@@ -200,7 +207,7 @@ if(title_th == '' || detais == '' || images_slide == ''){
                         processData: false,
                         success: function success(resp) {
 
-;                               $('input[name=images_slide]').val(resp.data);
+                             $('input[name=images_slide]').val(resp.data);
                                 $('#showImageslide').attr("src", $link +'/'+ resp.data);
 swal("บันทึกสำเร็จ!", "บันทึกสำเร็จ!", "success");
 

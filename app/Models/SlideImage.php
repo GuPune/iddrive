@@ -20,6 +20,7 @@ class SlideImage extends Model
         'slide_path',
         'status',
         'slide_url',
-        'slide_crt'
+        'slide_crt',
+        'lang'
     ];
 }

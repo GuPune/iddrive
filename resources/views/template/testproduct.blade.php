@@ -1,12 +1,31 @@
 @php
     $data = \App\CoreFunction\Cutstr::getproduct();
+
+
+    $locale = \App\CoreFunction\Cutstr::language();
+$localex = session()->get('locale');
+
+$st = 'B3';
+    $loca = \App\CoreFunction\Cutstr::typelan($st);
+
+
+    $stx = 'B9';
+    $locall = \App\CoreFunction\Cutstr::typelan($stx);
 @endphp
 
 <section id="testproduct" class="testimonials section section-diff section-bg-1">
     <div class="container" data-aos="fade-up">
       <div class="section-title">
-        <h2>สินค้าและบริการ</h2>
-        <p>ผลิตผลงานจากความต้องการเป็นหลัก เพื่อประโยชน์ที่คุ้มค่า.</p>
+        <h2>
+            @if($localex == 'th')
+            {{$loca->name_th}}
+            @elseif($localex == 'en')
+            {{$loca->name_en}}
+            @else
+            {{$loca->name_ch}}
+            @endif
+        </h2>
+
       </div>
 
       <div class="row bottom-gap">
@@ -42,7 +61,15 @@
          </div>
 
       <div align="center" style="padding: 20px;color:white">
-        <a href="/product" class="btn btn-large btn-danger"> สินค้าและบริการทั้งหมด </a>
+        <a href="/product" class="btn btn-large btn-danger">
+            @if($localex == 'th')
+            {{$locall->name_th}}
+            @elseif($localex == 'en')
+            {{$locall->name_en}}
+            @else
+            {{$locall->name_cn}}
+            @endif
+        </a>
     </div>
 
     </div>

@@ -91,6 +91,23 @@
       </li>
 
 
+
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="collapse" href="#form-slid" aria-expanded="false" aria-controls="form-slid">
+            <i class="typcn typcn-globe-outline menu-icon"></i>
+          <span class="menu-title">รูปภาพสไลค์องค์กร</span>
+          <i class="menu-arrow"></i>
+        </a>
+        <div class="collapse" id="form-slid">
+            <ul class="nav flex-column sub-menu">
+              <li class="nav-item"> <a class="nav-link" href="/admin/mutli/th">ภาพภาษาไทย</a></li>
+              <li class="nav-item"> <a class="nav-link" href="/admin/mutli/en">ภาพภาษาอังกฤษ</a></li>
+              <li class="nav-item"> <a class="nav-link" href="/admin/mutli/ch">ภาพภาษาจีน</a></li>
+            </ul>
+          </div>
+      </li>
+
+
       <li class="nav-item">
         <a class="nav-link" data-toggle="collapse" href="#form-contact" aria-expanded="false" aria-controls="form-contact">
          <i class="typcn typcn-th-small-outline menu-icon"></i>
@@ -121,5 +138,8 @@
             </ul>
           </div>
       </li>
+
+
+
 
   </nav>

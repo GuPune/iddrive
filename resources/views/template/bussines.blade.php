@@ -1,13 +1,33 @@
 @php
     $data = \App\CoreFunction\Cutstr::getbussines();
+
+    $imga = \App\CoreFunction\Cutstr::getconfig();
+    $locale = \App\CoreFunction\Cutstr::language();
+    $localex = session()->get('locale');
+    $st = 'B1';
+    $loca = \App\CoreFunction\Cutstr::typelan($st);
+
+
+
 @endphp
+
 
 
 <section id="bussines" class="testimonials section section-diff section-bg-1">
     <div class="container" data-aos="fade-up">
       <div class="section-title">
-        <h2>ธุรกิจของเรา</h2>
-        <p>ผลิตผลงานจากความต้องการเป็นหลัก เพื่อประโยชน์ที่คุ้มค่า.</p>
+        <h2>
+
+            @if($localex == 'th')
+            {{$loca->name_th}}
+            @elseif($localex == 'en')
+            {{$loca->name_en}}
+            @else
+            {{$loca->name_ch}}
+            @endif
+
+        </h2>
+
       </div>
 
       <div class="row bottom-gap">

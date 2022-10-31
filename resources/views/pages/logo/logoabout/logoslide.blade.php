@@ -54,6 +54,9 @@
                             เรื่อง / หัวข้อ
                         </th>
                         <th>
+                            ประเภท
+                        </th>
+                        <th>
                             สถานะ
                         </th>
                         <th>
@@ -72,6 +75,16 @@
                         </td>
                         <td>
                             {{$items->slide_topic}}
+                        </td>
+
+                        <td>
+                            @if ($items->lang == 'E')
+                       อังกฤษ
+                       @elseif ($items->lang == 'T')
+                       ไทย
+                            @else
+                           จีน
+                            @endif
                         </td>
 
                         <td>

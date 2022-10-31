@@ -1,5 +1,11 @@
 
+ @php
+  $localex = session()->get('locale');
+ $carou = \App\CoreFunction\Cutstr::carou($localex);
 
+
+
+@endphp
 
 <section id="bussines" class="testimonials section section-diff section-bg-2">
     <div id="demo" class="carousel slide" data-ride="carousel">
@@ -12,17 +18,25 @@
         </ul>
 
         <!-- The slideshow -->
+
         <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="assets/img/a1.png" alt="Los Angeles" width="1100" height="500">
-          </div>
-          <div class="carousel-item">
-            <img src="assets/img/a2.png" alt="Chicago" width="1100" height="500">
-          </div>
-          <div class="carousel-item">
-            <img src="assets/img/a3.png" alt="New York" width="1100" height="500">
-          </div>
+            @foreach($carou as $key => $carous)
+
+            @if ($key == 0)
+            <div class="carousel-item active">
+                <img src="/public/product/{{$carous->slide_path}}" alt="Los Angeles" width="1100" height="500">
+              </div>
+                @else
+                <div class="carousel-item">
+                    <img src="/public/product/{{$carous->slide_path}}" alt="Los Angeles" width="1100" height="500">
+                  </div>
+            @endif
+
+
+
+          @endforeach
         </div>
+
 
         <!-- Left and right controls -->
         <a class="carousel-control-prev" href="#demo" data-slide="prev">

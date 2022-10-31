@@ -151,6 +151,23 @@ class Cutstr extends Model
         return $data;
     }
 
+    public static function carou($type)
+    {
+
+
+        if($type == 'en'){
+            $data = SlideImage::where('status','Y')->where('slide_type','3')->where('lang','E')->orderBy("id", "desc")->get();
+        }elseif($type == 'th'){
+            $data = SlideImage::where('status','Y')->where('slide_type','3')->where('lang','T')->orderBy("id", "desc")->get();
+        }elseif($type == 'cn'){
+            $data = SlideImage::where('status','Y')->where('slide_type','3')->where('lang','C')->orderBy("id", "desc")->get();
+        }else{
+            $data = SlideImage::where('status','Y')->where('slide_type','3')->where('lang','T')->orderBy("id", "desc")->get();
+        }
+        return $data;
+    }
+
+
     public static function updateview($id)
     {
 
@@ -194,6 +211,25 @@ $menu = System::where('type',$me)->get();
 
 return $menu;
     }
+
+
+    public static  function typelan ($me) {
+
+        $getfir = System::where('system_menu',$me)->first();
+
+        return $getfir;
+            }
+
+
+
+    public static  function messages ($me) {
+
+         $getfir = System::where('system_menu',$me)->get();
+\Log::info($getfir);
+         return $getfir;
+     }
+
+
 
 
 

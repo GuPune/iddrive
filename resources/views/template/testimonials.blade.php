@@ -1,13 +1,27 @@
 @php
     $data = \App\CoreFunction\Cutstr::getnew();
 
+    $locale = \App\CoreFunction\Cutstr::language();
+    $localex = session()->get('locale');
+    $st = 'B4';
+    $loca = \App\CoreFunction\Cutstr::typelan($st);
+    $new = 'B5';
+    $allnew = \App\CoreFunction\Cutstr::typelan($new);
 @endphp
 
 <section id="testimonials" class="testimonials section section-diff">
     <div class="container" data-aos="fade-up">
       <div class="section-title">
-        <h2>ข่าวสารและกิจกรรม</h2>
-        <p>ผลิตผลงานจากความต้องการเป็นหลัก เพื่อประโยชน์ที่คุ้มค่า.</p>
+        <h2>
+            @if($localex == 'th')
+            {{$loca->name_th}}
+            @elseif($localex == 'en')
+            {{$loca->name_en}}
+            @else
+            {{$loca->name_ch}}
+            @endif
+        </h2>
+
       </div>
 
       <div class="testimonials-slider swiper">
@@ -41,7 +55,16 @@
         <div class="swiper-pagination"></div>
       </div>
       <div align="center" style="padding: 20px;color:white">
-        <a href="/new" class="btn btn-large btn-danger"> ข่าวสารทั้งหมด </a>
+        <a href="/new" class="btn btn-large btn-danger">
+
+            @if($localex == 'th')
+            {{$loca->name_th}}
+            @elseif($localex == 'en')
+            {{$loca->name_en}}
+            @else
+            {{$loca->name_ch}}
+            @endif
+             </a>
     </div>
     </div>
 

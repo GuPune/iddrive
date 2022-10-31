@@ -34,6 +34,7 @@
                 <input type="file" name="image_slide" id="image_slide" ><br>
                 <input type="hidden" class="form-control" name="images_slide" id="images_slide">
                 <img src="/img/no_photo.jpg" alt="รูปภาพสไลด์" class="img-fluid rounded mx-auto d-block profile-image" id="showImageslide" width="300" height="150">
+                <div class="help-block-name help-block-images_slide">กรุณาUpload รูปภาพ</div>
               </div>
 
 
@@ -45,6 +46,15 @@
                 <select class="form-control" id="status">
                     <option value="Y">Active</option>
                     <option value="N">Isactive</option>
+                  </select>
+              </div>
+
+              <div class="form-group">
+                <label for="exampleInputUsername1">ภาษา </label>
+                <select class="form-control" id="lan">
+                    <option value="T">ไทย</option>
+                    <option value="E">อังกฤษ</option>
+                    <option value="C">จีน</option>
                   </select>
               </div>
             <button type="button" class="btn btn-info btn-lg btn-block btn-save">Save
@@ -80,6 +90,7 @@
         var detais = $('#detais').val();
         var status = $('#status').val();
         var images_slide = $('#images_slide').val();
+        var lan = $('#lan').val();
 
 
 
@@ -98,7 +109,7 @@ if(valform === true){
                     type:'POST',
                     data:{
                         '_token': "{{ csrf_token() }}",
-                        url:url,title_th:title_th,detais:detais,images_slide:images_slide,status:status},
+                        url:url,title_th:title_th,detais:detais,images_slide:images_slide,status:status,lan:lan},
                     url: '/admin/logoabout',
 
                     success: function(datas){

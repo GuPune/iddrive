@@ -1,8 +1,27 @@
 <section id="contact" class="contact">
     <div class="container" data-aos="fade-up">
+        @php
+        $bra = \App\CoreFunction\Cutstr::brand();
 
+
+        $localex = session()->get('locale');
+    $st = 'B8';
+    $loca = \App\CoreFunction\Cutstr::typelan($st);
+
+    $new = 'C0';
+    $locas = \App\CoreFunction\Cutstr::messages($new);
+
+    @endphp
       <div class="section-title">
-        <h2>ติดต่อเรา</h2>
+        <h2>
+            @if($localex == 'th')
+            {{$loca->name_th}}
+            @elseif($localex == 'en')
+            {{$loca->name_en}}
+            @else
+            {{$loca->name_ch}}
+            @endif
+        </h2>
       </div>
 
       <div class="row" data-aos="fade-up" data-aos-delay="100">
@@ -23,25 +42,79 @@
 
         <div class="col-lg-6">
           <form action="#" method="post" role="form" class="php-email-form">
+            @foreach($locas as $k => $items)
+            @if($items->system_encodeid == 'C1')
             <div class="row">
-              <div class="col form-group">
-                <input type="text" name="name" class="form-control" id="name" placeholder="ชื่อ-นามสกุล" required>
-                <div class="help-block-des help-block-name">กรุณากรอกรายละเอียด</div>
+                <div class="col form-group">
+                    @if($localex == 'th')
+            <input type="text" name="name" class="form-control" id="name" placeholder="{{$items->name_th}}" required>
+            @elseif($localex == 'en')
+
+            <input type="text" name="name" class="form-control" id="name" placeholder="{{$items->name_en}}" required>
+            @else
+
+            <input type="text" name="name" class="form-control" id="name" placeholder="{{$items->name_cn}}" required>
+            @endif
+
+                  <div class="help-block-des help-block-name">
+                    กรุณากรอกรายละเอียด
+                </div>
+                </div>
               </div>
-              <div class="col form-group">
-                <input type="email" class="form-control" name="email" id="email" placeholder="อีเมล" required>
-                <div class="help-block-des help-block-email">กรุณากรอกรายละเอียด</div>
-              </div>
-            </div>
+
+            @elseif($items->system_encodeid == 'C2')
             <div class="form-group">
-              <input type="text" class="form-control" name="tel" id="tel" placeholder="เบอร์โทร" required>
-              <div class="help-block-des help-block-tel">กรุณากรอกรายละเอียด</div>
-            </div>
+                @if($localex == 'th')
+                <input type="text" class="form-control" name="tel" id="tel" placeholder="{{$items->name_th}}" required>
+                @elseif($localex == 'en')
+
+                <input type="text" class="form-control" name="tel" id="tel" placeholder="{{$items->name_en}}" required>
+                @else
+
+                <input type="text" class="form-control" name="tel" id="tel" placeholder="{{$items->name_cn}}" required>
+                @endif
+                <div class="help-block-des help-block-tel">
+                    กรุณากรอกรายละเอียด
+                </div>
+              </div>
+
+            @elseif($items->system_encodeid == 'C3')
+
+            <div class="col form-group">
+                @if($localex == 'th')
+                <input type="email" class="form-control" name="email" id="email" placeholder="{{$items->name_th}}" required>
+                @elseif($localex == 'en')
+                <input type="email" class="form-control" name="email" id="email" placeholder="{{$items->name_en}}" required>
+                @else
+                <input type="email" class="form-control" name="email" id="email" placeholder="{{$items->name_cn}}" required>
+                @endif
+                <div class="help-block-des help-block-email">
+
+                    กรุณากรอกรายละเอียด</div>
+              </div>
+
+
+            @elseif($items->system_encodeid == 'C4')
 
             <div class="form-group">
-              <textarea class="form-control" name="message" id="message" rows="5" placeholder="ข้อความ" required></textarea>
-              <div class="help-block-des help-block-message">กรุณากรอกรายละเอียด</div>
+
+
+                @if($localex == 'th')
+                <textarea class="form-control" name="message" id="message" rows="5" placeholder="{{$items->name_th}}" required></textarea>
+
+                @elseif($localex == 'en')
+                <textarea class="form-control" name="message" id="message" rows="5" placeholder="{{$items->name_en}}" required></textarea>
+                @else
+                <textarea class="form-control" name="message" id="message" rows="5" placeholder="{{$items->name_cn}}" required></textarea>
+                @endif
+                <div class="help-block-des help-block-message">กรุณากรอกรายละเอียด</div>
+              </div>
+
+            <div class="form-group mb-4">
+                <input id="captcha" type="text" class="form-control" placeholder="Enter Captcha" name="captcha">
+                <div class="help-block-des help-block-captcha">กรุณากรอกรายละเอียด</div>
             </div>
+
             <div class="form-group mt-4 mb-4">
                 <div class="captcha">
                     @php
@@ -56,13 +129,22 @@
                     </button>
                 </div>
             </div>
-            <div class="form-group mb-4">
-                <input id="captcha" type="text" class="form-control" placeholder="Enter Captcha" name="captcha">
-                <div class="help-block-des help-block-captcha">กรุณากรอกรายละเอียด</div>
-            </div>
+
             <div class="text-center">
-                <button type="button" class="btn btn-danger btn-save"  >ส่งข้อความ</button>
+
+                @if($localex == 'th')
+                <button type="button" class="btn btn-danger btn-save"  >{{$items->name_th}}</button>
+                @elseif($localex == 'en')
+                <button type="button" class="btn btn-danger btn-save"  >{{$items->name_en}}</button>
+                @else
+                <button type="button" class="btn btn-danger btn-save"  >{{$items->name_cn}}</button>
+                @endif
+
             </div>
+
+            @endif
+            @endforeach
+
           </form>
         </div>
 
