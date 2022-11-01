@@ -15,12 +15,22 @@
           <div class="col-lg-4 mx-auto">
             <div class="auth-form-light text-left py-5 px-4 px-sm-5">
               <div class="brand-logo">
-                <img src="../../images/logo.svg" alt="logo">
+                <img src="/public/product/20221025041653YY0mUmqXVqXuQSCz6kXT.png" alt="logo">
               </div>
               {{-- <h4>Hello! let's get started</h4> --}}
               <h6 class="font-weight-light">Sign in to continue.</h6>
+
+
+@if ($errors->any())
+<div class="alert alert-danger">
+    <button type="button" class="close" data-dismiss="alert">×</button>
+    Check the following errors :(
+</div>
+@endif
               <form class="pt-3" method="POST" action="{{ url("login") }}">
                 @csrf
+
+
                 <div class="form-group">
                   <input id="email" type="email" class="form-control form-control-lg"  placeholder="Email"  name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 

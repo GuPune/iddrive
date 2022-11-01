@@ -15,7 +15,7 @@ class System extends Model
         'id',
         'name_th',
         'name_en',
-        'name_ch',
+        'name_cn',
         'system_menu',
         'link',
         'system_encodeid',

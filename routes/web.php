@@ -69,6 +69,7 @@ Route::prefix('admin')->group(function () {
 
 
     Route::get('/mutli/{id}', [MultiController::class, 'index'])->name('dashboard');
+    Route::PUT('/mutli/{id}', [MultiController::class, 'update'])->name('dashboard');
 });
 
 

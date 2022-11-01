@@ -132,9 +132,9 @@
 
         <div class="collapse" id="form-multi">
             <ul class="nav flex-column sub-menu">
-              <li class="nav-item"> <a class="nav-link" href="/admin/mutli/th">ภาษาไทย</a></li>
-              <li class="nav-item"> <a class="nav-link" href="/admin/mutli/en">ภาษาอังกฤษ</a></li>
-              <li class="nav-item"> <a class="nav-link" href="/admin/mutli/ch">ภาษาจีน</a></li>
+              <li class="nav-item"> <a class="nav-link" href="/admin/mutli/menu">Menu</a></li>
+              <li class="nav-item"> <a class="nav-link" href="/admin/mutli/input">Input</a></li>
+              <li class="nav-item"> <a class="nav-link" href="/admin/mutli/message">Message</a></li>
             </ul>
           </div>
       </li>

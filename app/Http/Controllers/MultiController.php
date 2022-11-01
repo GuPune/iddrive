@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Multi;
+use App\Models\System;
 use Illuminate\Http\Request;
 
 class MultiController extends Controller
@@ -17,7 +18,9 @@ class MultiController extends Controller
         //
 
 
-        $alldata = Multi::all();
+        $alldata = System::where('type',$id)->get();
+
+
 
         return view('multi')->with('data',$alldata);
     }
@@ -75,6 +78,17 @@ class MultiController extends Controller
     public function update(Request $request, $id)
     {
         //
+
+
+        $updatecontent = System::where('id',$id)->update([
+            'name_th' => $request->name_th,
+            'name_en' => $request->name_en,
+            'name_cn' => $request->name_cn,
+        ]);
+        return response()->json([
+            'msg_return' => 'บันทึกสำเร็จ',
+            'code_return' => 1,
+        ]);
     }
 
     /**
