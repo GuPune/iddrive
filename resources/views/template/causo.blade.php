@@ -7,7 +7,7 @@
 
 @endphp
 
-<section id="bussines" class="testimonials section section-diff section-bg-2">
+<section id="carou" class="carou section section-diff section-bg-2">
     <div id="demo" class="carousel slide" data-ride="carousel">
 
         <!-- Indicators -->

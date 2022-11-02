@@ -151,6 +151,12 @@ class Cutstr extends Model
         return $data;
     }
 
+    public static function getbu($id)
+    {
+        $data = SlideImage::where('status','Y')->where('slide_type',$id)->orderBy("id", "desc")->get();
+        return $data;
+    }
+
     public static function carou($type)
     {
 

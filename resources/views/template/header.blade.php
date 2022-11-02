@@ -36,7 +36,7 @@ $me = \App\CoreFunction\Cutstr::menufr($st);
 
          @if($mes->system_encodeid == 'A1')
          <li>
-            <a class="nav-link scrollto active" href="/">
+            <a class="nav-link scrollto active" href="#">
                 @if($localex == 'th')
                 {{$mes->name_th}}
                 @elseif($localex == 'en')
@@ -85,7 +85,7 @@ $me = \App\CoreFunction\Cutstr::menufr($st);
 
         </a></li>
         @elseif($mes->system_encodeid == 'A5')
-        <li><a class="nav-link scrollto " href="#portfolio">
+        <li><a class="nav-link scrollto " href="#carou">
             @if($localex == 'th')
             {{$mes->name_th}}
             @elseif($localex == 'en')

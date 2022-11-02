@@ -91,7 +91,7 @@
           </div>
       </li>
 
-      <li class="nav-item">
+      {{-- <li class="nav-item">
         <a class="nav-link" data-toggle="collapse" href="#form-slid" aria-expanded="false" aria-controls="form-slid">
             <i class="typcn typcn-globe-outline menu-icon"></i>
           <span class="menu-title">รูปภาพสไลค์องค์กร</span>
@@ -104,7 +104,7 @@
               <li class="nav-item"> <a class="nav-link" href="/admin/mutli/ch">ภาพภาษาจีน</a></li>
             </ul>
           </div>
-      </li>
+      </li> --}}
 
 
       <li class="nav-item">

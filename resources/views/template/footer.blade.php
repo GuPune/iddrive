@@ -1,3 +1,14 @@
+@php
+$imga = \App\CoreFunction\Cutstr::getconfig();
+
+$locale = \App\CoreFunction\Cutstr::language();
+$localex = session()->get('locale');
+$st = 'menu';
+$me = \App\CoreFunction\Cutstr::menufr($st);
+
+
+@endphp
+
 <footer id="footer">
 
     <div class="footer-top">
@@ -18,11 +29,91 @@
           <div class="col-lg-2 col-md-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+
+                @foreach($me as $k => $mes)
+
+
+
+                @if($mes->system_encodeid == 'A1')
+                <li><i class="bx bx-chevron-right"></i>
+                   <a class="nav-link scrollto active" href="#">
+                       @if($localex == 'th')
+                       {{$mes->name_th}}
+                       @elseif($localex == 'en')
+                       {{$mes->name_en}}
+                       @else
+                       {{$mes->name_cn}}
+                       @endif
+
+               </a>
+                </li>
+
+               @elseif($mes->system_encodeid == 'A2')
+               <li><i class="bx bx-chevron-right"></i>
+                   <a class="nav-link scrollto" href="#testproduct">
+                       @if($localex == 'th')
+                       {{$mes->name_th}}
+                       @elseif($localex == 'en')
+                       {{$mes->name_en}}
+                       @else
+                       {{$mes->name_cn}}
+                       @endif
+                   </a>
+               </li>
+               @elseif($mes->system_encodeid == 'A3')
+               <li><i class="bx bx-chevron-right"></i>
+                   <a class="nav-link scrollto" href="#testimonials">
+                       @if($localex == 'th')
+                       {{$mes->name_th}}
+                       @elseif($localex == 'en')
+                       {{$mes->name_en}}
+                       @else
+                       {{$mes->name_cn}}
+                       @endif
+
+                   </a></li>
+               @elseif($mes->system_encodeid == 'A4')
+               <li><i class="bx bx-chevron-right"></i><a class="nav-link scrollto" href="#bussines">
+
+                   @if($localex == 'th')
+                   {{$mes->name_th}}
+                   @elseif($localex == 'en')
+                   {{$mes->name_en}}
+                   @else
+                   {{$mes->name_cn}}
+                   @endif
+
+               </a></li>
+               @elseif($mes->system_encodeid == 'A5')
+               <li><i class="bx bx-chevron-right"></i><a class="nav-link scrollto " href="#carou">
+                   @if($localex == 'th')
+                   {{$mes->name_th}}
+                   @elseif($localex == 'en')
+                   {{$mes->name_en}}
+                   @else
+                   {{$mes->name_cn}}
+                   @endif
+
+               </a></li>
+               @elseif($mes->system_encodeid == 'A6')
+               <li><i class="bx bx-chevron-right"></i><a class="nav-link scrollto" href="#contact">
+                   @if($localex == 'th')
+                   {{$mes->name_th}}
+                   @elseif($localex == 'en')
+                   {{$mes->name_en}}
+                   @else
+                   {{$mes->name_cn}}
+                   @endif
+               </a></li>
+
+
+
+               @endif
+
+
+
+                   @endforeach
+
 
 
             </ul>
