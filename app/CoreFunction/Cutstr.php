@@ -103,6 +103,15 @@ class Cutstr extends Model
         return $data;
     }
 
+    public static function confi()
+    {
+        $data = ConfigImage::first();
+
+        return $data;
+    }
+
+
+
     public static function getbussines()
     {
         $data = NewContent::where('status','Y')->where('type','2')->orderBy("id", "desc")->get();

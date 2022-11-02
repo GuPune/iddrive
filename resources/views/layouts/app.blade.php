@@ -116,7 +116,7 @@
 #hero1 {
     width: 100%;
     height: 100vh;
-    background: url("https://i.imgur.com/3BgTF6X.jpg") top center no-repeat;
+    /* background: url("http://idweb.idtest.work/public/product/20221102064852hRbtEVd4x252aXtIhrJF.jpg") top center no-repeat; */
     background-size: cover;
     position: relative;
     padding-top: 82px;
@@ -175,8 +175,14 @@
   <!-- ======= Header ======= -->
   @include('template.header')
 
+  @php
+  $cob = \App\CoreFunction\Cutstr::confi();
+
+
+@endphp
+
   <!-- ======= Hero Section ======= -->
-  <section id="hero1" class="d-flex align-items-center" style="background-image: url('https://i.imgur.com/3BgTF6X.jpg') top center no-repeat">
+  <section id="hero1" class="d-flex align-items-center" style="background: url('http://idweb.idtest.work/public/product/{{$cob->image_fut}}') top center no-repeat;background-size: cover;">
     <div class="container" data-aos="zoom-out" data-aos-delay="100">
       <div class="row">
         <div class="col-xl-6">
