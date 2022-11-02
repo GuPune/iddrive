@@ -28,6 +28,16 @@
 
         </h2>
 
+        <p>
+            @if($localex == 'th')
+            {{$loca->title_th}}
+            @elseif($localex == 'en')
+            {{$loca->title_en}}
+            @else
+            {{$loca->title_cn}}
+            @endif
+        </p>
+
       </div>
 
       <div class="row bottom-gap">

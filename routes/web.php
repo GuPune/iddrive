@@ -65,6 +65,11 @@ Route::prefix('admin')->group(function () {
     Route::resource('logocer', '\App\Http\Controllers\LogocerController');
     Route::resource('logobussines', '\App\Http\Controllers\LogobussinesController');
 
+    Route::resource('bu', '\App\Http\Controllers\BuController');
+
+
+    Route::resource('title', '\App\Http\Controllers\ChagnetitleController');
+
     Route::post('/product/uploadimage', [App\Http\Controllers\ProductController::class, 'upload']);
 
 

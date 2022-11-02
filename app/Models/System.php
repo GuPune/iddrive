@@ -16,10 +16,14 @@ class System extends Model
         'name_th',
         'name_en',
         'name_cn',
+        'title_th',
+        'title_en',
+        'title_cn',
         'system_menu',
         'link',
         'system_encodeid',
         'type',
     ];
 }
+
 

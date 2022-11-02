@@ -25,6 +25,15 @@ $loca = \App\CoreFunction\Cutstr::typelan($st);
             {{$loca->name_ch}}
             @endif
         </h2>
+        <p>
+            @if($localex == 'th')
+            {{$loca->title_th}}
+            @elseif($localex == 'en')
+            {{$loca->title_en}}
+            @else
+            {{$loca->title_cn}}
+            @endif
+        </p>
       </div>
       @php
         $crs = \App\CoreFunction\Cutstr::cr();

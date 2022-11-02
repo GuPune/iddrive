@@ -18,6 +18,9 @@ class CreateSystemMenuTable extends Migration
             $table->text('name_th')->nullable();
             $table->text('name_en')->nullable();
             $table->text('name_ch')->nullable();
+            $table->text('title_th')->nullable();
+            $table->text('title_en')->nullable();
+            $table->text('title_cn')->nullable();
             $table->text('link')->nullable();
             $table->text('system_menu')->nullable();
             $table->text('system_encodeid')->nullable();

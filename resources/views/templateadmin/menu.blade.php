@@ -39,6 +39,7 @@
             <li class="nav-item"> <a class="nav-link" href="/admin/logocustomer">โลโก้ลูกค้าของเรา</a></li>
             <li class="nav-item"> <a class="nav-link" href="/admin/logocer">โลโก้การรับรอง</a></li>
             <li class="nav-item"> <a class="nav-link" href="/admin/logobussines">โลโก้ธุรกิจของเรา</a></li>
+            <li class="nav-item"> <a class="nav-link" href="/admin/bu">Business Unit</a></li>
           </ul>
         </div>
       </li>
@@ -90,8 +91,6 @@
           </div>
       </li>
 
-
-
       <li class="nav-item">
         <a class="nav-link" data-toggle="collapse" href="#form-slid" aria-expanded="false" aria-controls="form-slid">
             <i class="typcn typcn-globe-outline menu-icon"></i>
@@ -135,11 +134,8 @@
               <li class="nav-item"> <a class="nav-link" href="/admin/mutli/menu">Menu</a></li>
               <li class="nav-item"> <a class="nav-link" href="/admin/mutli/input">Input</a></li>
               <li class="nav-item"> <a class="nav-link" href="/admin/mutli/message">Message</a></li>
+              <li class="nav-item"> <a class="nav-link" href="/admin/title">Title</a></li>
             </ul>
           </div>
       </li>
-
-
-
-
   </nav>
