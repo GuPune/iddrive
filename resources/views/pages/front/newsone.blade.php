@@ -2,7 +2,7 @@
 
 @section('content')
 
-<meta property="og:url"           content="http://idweb.idtest.work/new/53" />
+<meta property="og:url"           content="http://idweb.idtest.work/new/{{$data->id}}" />
 <meta property="og:type"          content="website" />
 <meta property="og:title"         content="Your Website Title" />
 <meta property="og:description"   content="Your description" />
@@ -54,7 +54,7 @@ fjs.parentNode.insertBefore(js, fjs);
 
 <!-- Your share button code -->
 <div class="fb-share-button"
-data-href="http://idweb.idtest.work/new/53"
+data-href="http://idweb.idtest.work/new/{{$data->id}}"
 data-layout="button_count">
 </div>
 
