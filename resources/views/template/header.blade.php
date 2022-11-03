@@ -7,6 +7,57 @@
         background: #f47e2b!important;
 
     }
+
+    .lang {
+
+        padding-left: 5px;padding-right:5px;
+    }
+
+
+
+        /* @media only screen and (min-width : 992px) {
+            .langmob {
+            display: none;
+        }
+
+        .langdes{
+                display: none;
+
+            }
+
+        } */
+
+        @media only screen and (max-width: 992px) {
+            .langdes{
+                display: none;
+            }
+            .langmobile{
+                display: none
+            }
+        }
+
+        @media (min-width:320px)  {
+             /* smartphones, iPhone, portrait 480x320 phones */
+             .langmobile{
+                display: block;
+            }
+            }
+@media (min-width:481px)  {
+    /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+    .langmobile{
+                display: block
+            }
+}
+
+@media only screen and (min-width : 1200px) {
+    .langmobile{
+                display: none;
+            }
+}
+
+
+
+
     </style>
 <header id="header" class="fixed-top d-flex align-items-center bga">
     <div class="container d-flex align-items-center">
@@ -115,6 +166,9 @@ $me = \App\CoreFunction\Cutstr::menufr($st);
             @endforeach
 
 
+            <li>       </li>
+
+<div class="langmobile">
             <li>
                 <a  href="{{ url('lang/en') }}">
                     <img src="assets/img/en.jpg" title="English">
@@ -122,15 +176,35 @@ $me = \App\CoreFunction\Cutstr::menufr($st);
 
         </li>
         <li>
-            <a style="padding-left: 5px;padding-right:5px;" href="{{ url('lang/th') }}">
+            <a  href="{{ url('lang/th') }}">
                 <img src="assets/img/thai.jpg" title="Thai">
                 </a>
 
     </li>
     <li>
-        <a style="padding-left: 5px;padding-right:5px;" href="{{ url('lang/cn') }}">
+        <a  href="{{ url('lang/cn') }}">
             <img src="assets/img/cn.png" title="Chaina">
             </a>
+
+</li>
+</div>
+
+<li  class="langdes">
+    <a  style="padding-left: 5px;padding-right:5px;" href="{{ url('lang/en') }}">
+        <img src="assets/img/en.jpg" title="English">
+    </a>
+
+</li>
+<li class="langdes">
+<a style="padding-left: 5px;padding-right:5px;" href="{{ url('lang/th') }}">
+    <img src="assets/img/thai.jpg" title="Thai">
+    </a>
+
+</li>
+<li class="langdes">
+<a  style="padding-left: 5px;padding-right:5px;" href="{{ url('lang/cn') }}">
+<img src="assets/img/cn.png" title="Chaina">
+</a>
 
 </li>
 
