@@ -39,6 +39,7 @@
 
 
 @foreach($data as $datas)
+
 <div class="swiper-slide">
     <div class="testimonial-wrap">
         <div class="card">
@@ -47,7 +48,11 @@
       $fineUrlImg = $link . "/export/new/" . $datas->n_code;
       $imga = \App\CoreFunction\Cutstr::findimgInhtml($fineUrlImg) != NULL  ? \App\CoreFunction\Cutstr::findimgInhtml($fineUrlImg) : $link . "/img/no_photo.jpg";
 @endphp
+
+<a href="/new/{{$datas->id}}">
+
             <img src="{{$imga}}"  class="img-responsive" alt="Images" style="width: 100%; height:250px">
+        </a>
             <div class="card-body">
               <h3 class="card-title">{{$datas->title_th}}</h3>
               <p class="card-text">{{$datas->title_th}}</p>

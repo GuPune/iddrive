@@ -49,7 +49,7 @@ $st = 'B3';
     $imga = \App\CoreFunction\Cutstr::findimgInhtml($fineUrlImg) != NULL  ? \App\CoreFunction\Cutstr::findimgInhtml($fineUrlImg) : $link . "/img/no_photo.jpg";
 
 @endphp
-                       <a href="#">
+                       <a href="/product/{{$datas->id}}">
                         <img data-original="{{$imga}}" alt="ภาพข่าวกิจกรรม" class="lazy"  src="{{$imga}}" style="display: inline;width: 100%; height:250px;">
                     </a>
                      </div>

@@ -18,7 +18,9 @@ $me = \App\CoreFunction\Cutstr::menufr($st);
           <div class="col-lg-3 col-md-6 footer-contact">
             <h3>บริษัท ไอดีไดรฟ์ จำกัด<span></span></h3>
             <p>
-                200/217 ถนน ชัยพฤกษ์<br>
+                สำนักงานใหญ่<br>
+                เลขประจำตัวผู้เสียภาษี 0405536000531<br>
+                200/222 หมู่ที่ 2 ถนนชัยพฤกษ์<br>
                 ตำบลในเมือง อำเภอเมืองขอนแก่น<br>
               ขอนแก่น 40000<br><br>
               <strong>Phone:</strong> 043 224 000<br>
