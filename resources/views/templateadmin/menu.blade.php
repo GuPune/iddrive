@@ -18,12 +18,12 @@
 
         <p class="sidebar-menu-title">Dash menu</p>
       </li>
-      <li class="nav-item">
+      {{-- <li class="nav-item">
         <a class="nav-link" href="/admin/dashboard">
           <i class="typcn typcn-device-desktop menu-icon"></i>
           <span class="menu-title">ข้อมูลทั่วไป <span class="badge badge-primary ml-3">New</span></span>
         </a>
-      </li>
+      </li> --}}
       <li class="nav-item">
         <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
           <i class="typcn typcn-briefcase menu-icon"></i>
