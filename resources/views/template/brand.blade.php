@@ -1,5 +1,24 @@
+<style>
+
+.clients .swiper-slide img {
+    opacity: 1;
+    transition: 0.3s;
+    filter: grayscale(0);
+}
+
+.tibrand h2::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 200px;
+    height: 3px;
+    background: #e03a3c;
+    bottom: 0;
+    left: calc(50% - 100px);
+}
+    </style>
 <section id="clients" class="clients">
-    <div class="section-title">
+    <div class="section-title tibrand">
         @php
         $bra = \App\CoreFunction\Cutstr::brand();
 

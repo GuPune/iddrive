@@ -13,9 +13,24 @@ $st = 'B3';
     $locall = \App\CoreFunction\Cutstr::typelan($stx);
 @endphp
 
+<style>
+
+
+    .tipro h2::after {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 230px;
+        height: 3px;
+        background: #e03a3c;
+        bottom: 0;
+        left: calc(50% - 115px);
+    }
+        </style>
+
 <section id="testproduct" class="testimonials section section-diff section-bg-1">
     <div class="container" data-aos="fade-up">
-      <div class="section-title">
+      <div class="section-title tipro">
         <h2>
             @if($localex == 'th')
             {{$loca->name_th}}

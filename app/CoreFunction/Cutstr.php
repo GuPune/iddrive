@@ -120,7 +120,7 @@ class Cutstr extends Model
 
     public static function getproduct()
     {
-        $data = NewContent::where('status','Y')->where('type','3')->orderBy("id", "desc")->get();
+        $data = NewContent::where('status','Y')->where('type','3')->orderBy("id", "asc")->take(3)->get();
         return $data;
     }
 

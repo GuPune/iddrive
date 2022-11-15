@@ -23,8 +23,8 @@ $me = \App\CoreFunction\Cutstr::menufr($st);
                 200/222 หมู่ที่ 2 ถนนชัยพฤกษ์<br>
                 ตำบลในเมือง อำเภอเมืองขอนแก่น<br>
               ขอนแก่น 40000<br><br>
-              <strong>Phone:</strong> 043 224 000<br>
-              <strong>Email:</strong> -<br>
+              <strong>Phone:</strong> 043 228 899<br>
+              <strong>Email:</strong> idofficer@iddrives.co.th<br>
             </p>
           </div>
 
